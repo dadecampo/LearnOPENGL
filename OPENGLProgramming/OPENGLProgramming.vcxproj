@@ -110,6 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,6 +140,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
+    <ClInclude Include="Shader\Ex1\Shader_Ex1.h" />
+    <ClInclude Include="Shader\Ex2\Shader_Ex2.h" />
+    <ClInclude Include="Shader\Ex3\Shader_Ex3.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\Ex1\Shader_Ex1_fs.glsl" />
+    <None Include="Shader\Ex1\Shader_Ex1_vs.glsl" />
+    <None Include="Shader\Ex2\Shader_Ex2_fs.glsl" />
+    <None Include="Shader\Ex2\Shader_Ex2_vs.glsl" />
+    <None Include="Shader\Ex3\Shader_Ex3_fs.glsl" />
+    <None Include="Shader\Ex3\Shader_Ex3_vs.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

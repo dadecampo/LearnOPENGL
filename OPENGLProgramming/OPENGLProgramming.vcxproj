@@ -137,12 +137,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
+    <ClCompile Include="Texture\Ex4\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
     <ClInclude Include="Shader\Ex1\Shader_Ex1.h" />
     <ClInclude Include="Shader\Ex2\Shader_Ex2.h" />
     <ClInclude Include="Shader\Ex3\Shader_Ex3.h" />
+    <ClInclude Include="Texture\Ex1\shader_s.h" />
+    <ClInclude Include="Texture\Ex2\shader_s.h" />
+    <ClInclude Include="Texture\Ex3\shader_s.h" />
+    <ClInclude Include="Texture\Ex4\shader_s.h" />
+    <ClInclude Include="Texture\shader_s.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Ex1\Shader_Ex1_fs.glsl" />
@@ -151,6 +157,20 @@
     <None Include="Shader\Ex2\Shader_Ex2_vs.glsl" />
     <None Include="Shader\Ex3\Shader_Ex3_fs.glsl" />
     <None Include="Shader\Ex3\Shader_Ex3_vs.glsl" />
+    <None Include="Texture\Ex1\Shader_fs.glsl" />
+    <None Include="Texture\Ex1\Shader_vs.glsl" />
+    <None Include="Texture\Ex2\Shader_fs.glsl" />
+    <None Include="Texture\Ex2\Shader_vs.glsl" />
+    <None Include="Texture\Ex3\Shader_fs.glsl" />
+    <None Include="Texture\Ex3\Shader_vs.glsl" />
+    <None Include="Texture\Ex4\Shader_fs.glsl" />
+    <None Include="Texture\Ex4\Shader_vs.glsl" />
+    <None Include="Texture\Shader_fs.glsl" />
+    <None Include="Texture\Shader_vs.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\david\Desktop\awesomeface.png" />
+    <Image Include="C:\Users\david\Desktop\container.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

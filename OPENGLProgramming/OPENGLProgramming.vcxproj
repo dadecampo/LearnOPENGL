@@ -137,13 +137,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="Camera\Ex1\Camera.cpp" />
+    <ClCompile Include="Camera\Ex2\Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
     <ClInclude Include="Camera\camera.h" />
     <ClInclude Include="Camera\Ex1\camera.h" />
     <ClInclude Include="Camera\Ex1\shader_s.h" />
+    <ClInclude Include="Camera\Ex2\camera.h" />
+    <ClInclude Include="Camera\Ex2\shader_s.h" />
     <ClInclude Include="Camera\shader_s.h" />
     <ClInclude Include="CoordinateSystem\Ex1\shader_s.h" />
     <ClInclude Include="CoordinateSystem\shader_s.h" />
@@ -162,6 +164,8 @@
   <ItemGroup>
     <None Include="Camera\Ex1\Shader_fs.glsl" />
     <None Include="Camera\Ex1\Shader_vs.glsl" />
+    <None Include="Camera\Ex2\Shader_fs.glsl" />
+    <None Include="Camera\Ex2\Shader_vs.glsl" />
     <None Include="Camera\Shader_fs.glsl" />
     <None Include="Camera\Shader_vs.glsl" />
     <None Include="CoordinateSystem\Ex1\Shader_fs.glsl" />

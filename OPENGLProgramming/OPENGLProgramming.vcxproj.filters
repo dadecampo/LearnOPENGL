@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="Camera\Ex1\Camera.cpp">
+    <ClCompile Include="Camera\Ex2\Camera.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,6 +77,12 @@
     <ClInclude Include="Camera\Ex1\shader_s.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="Camera\Ex2\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\Ex2\shader_s.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Ex1\Shader_Ex1_vs.glsl" />
@@ -109,6 +115,8 @@
     <None Include="Camera\Shader_vs.glsl" />
     <None Include="Camera\Ex1\Shader_vs.glsl" />
     <None Include="Camera\Ex1\Shader_fs.glsl" />
+    <None Include="Camera\Ex2\Shader_vs.glsl" />
+    <None Include="Camera\Ex2\Shader_fs.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">

@@ -137,7 +137,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="Camera\Ex2\Camera.cpp" />
+    <ClCompile Include="Lighting\Colors\Colors.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
@@ -149,6 +149,8 @@
     <ClInclude Include="Camera\shader_s.h" />
     <ClInclude Include="CoordinateSystem\Ex1\shader_s.h" />
     <ClInclude Include="CoordinateSystem\shader_s.h" />
+    <ClInclude Include="Lighting\Colors\camera.h" />
+    <ClInclude Include="Lighting\Colors\shader_s.h" />
     <ClInclude Include="Shader\Ex1\Shader_Ex1.h" />
     <ClInclude Include="Shader\Ex2\Shader_Ex2.h" />
     <ClInclude Include="Shader\Ex3\Shader_Ex3.h" />
@@ -172,6 +174,10 @@
     <None Include="CoordinateSystem\Ex1\Shader_vs.glsl" />
     <None Include="CoordinateSystem\Shader_fs.glsl" />
     <None Include="CoordinateSystem\Shader_vs.glsl" />
+    <None Include="Lighting\Colors\colors_vs.glsl" />
+    <None Include="Lighting\Colors\colors_fs.glsl" />
+    <None Include="Lighting\Colors\light_cube_fs.glsl" />
+    <None Include="Lighting\Colors\light_cube_vs.glsl" />
     <None Include="Shader\Ex1\Shader_Ex1_fs.glsl" />
     <None Include="Shader\Ex1\Shader_Ex1_vs.glsl" />
     <None Include="Shader\Ex2\Shader_Ex2_fs.glsl" />

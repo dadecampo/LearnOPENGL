@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="Lighting\Basic\Basic.cpp">
+    <ClCompile Include="Lighting\Materials\Ex1\Materials.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,10 +89,40 @@
     <ClInclude Include="Lighting\Colors\shader_s.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Lighting\Basic\shader_s.h">
+    <ClInclude Include="Lighting\Basic\Ex1\shader_s.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Lighting\Basic\camera.h">
+    <ClInclude Include="Lighting\Basic\Ex1\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Basic\Ex2\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Basic\Ex2\shader_s.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Basic\Ex3\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Basic\Ex3\shader_s.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Basic\Ex4\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Basic\Ex4\shader_s.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Materials\shader_s.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Materials\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Materials\Ex1\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting\Materials\Ex1\shader_s.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
@@ -133,10 +163,30 @@
     <None Include="Lighting\Colors\colors_fs.glsl" />
     <None Include="Lighting\Colors\light_cube_vs.glsl" />
     <None Include="Lighting\Colors\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\colors_fs.glsl" />
-    <None Include="Lighting\Basic\colors_vs.glsl" />
-    <None Include="Lighting\Basic\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex1\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex1\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex1\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex1\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex2\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex2\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex2\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex2\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex3\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex3\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex3\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex3\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex4\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex4\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex4\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex4\light_cube_vs.glsl" />
+    <None Include="Lighting\Materials\colors_fs.glsl" />
+    <None Include="Lighting\Materials\colors_vs.glsl" />
+    <None Include="Lighting\Materials\light_cube_fs.glsl" />
+    <None Include="Lighting\Materials\light_cube_vs.glsl" />
+    <None Include="Lighting\Materials\Ex1\colors_fs.glsl" />
+    <None Include="Lighting\Materials\Ex1\colors_vs.glsl" />
+    <None Include="Lighting\Materials\Ex1\light_cube_fs.glsl" />
+    <None Include="Lighting\Materials\Ex1\light_cube_vs.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">

@@ -137,7 +137,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="Lighting\Basic\Basic.cpp" />
+    <ClCompile Include="Lighting\Materials\Ex1\Materials.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
@@ -149,10 +149,20 @@
     <ClInclude Include="Camera\shader_s.h" />
     <ClInclude Include="CoordinateSystem\Ex1\shader_s.h" />
     <ClInclude Include="CoordinateSystem\shader_s.h" />
-    <ClInclude Include="Lighting\Basic\camera.h" />
-    <ClInclude Include="Lighting\Basic\shader_s.h" />
+    <ClInclude Include="Lighting\Basic\Ex1\camera.h" />
+    <ClInclude Include="Lighting\Basic\Ex1\shader_s.h" />
+    <ClInclude Include="Lighting\Basic\Ex2\camera.h" />
+    <ClInclude Include="Lighting\Basic\Ex2\shader_s.h" />
+    <ClInclude Include="Lighting\Basic\Ex3\camera.h" />
+    <ClInclude Include="Lighting\Basic\Ex3\shader_s.h" />
+    <ClInclude Include="Lighting\Basic\Ex4\camera.h" />
+    <ClInclude Include="Lighting\Basic\Ex4\shader_s.h" />
     <ClInclude Include="Lighting\Colors\camera.h" />
     <ClInclude Include="Lighting\Colors\shader_s.h" />
+    <ClInclude Include="Lighting\Materials\camera.h" />
+    <ClInclude Include="Lighting\Materials\Ex1\camera.h" />
+    <ClInclude Include="Lighting\Materials\Ex1\shader_s.h" />
+    <ClInclude Include="Lighting\Materials\shader_s.h" />
     <ClInclude Include="Shader\Ex1\Shader_Ex1.h" />
     <ClInclude Include="Shader\Ex2\Shader_Ex2.h" />
     <ClInclude Include="Shader\Ex3\Shader_Ex3.h" />
@@ -176,14 +186,34 @@
     <None Include="CoordinateSystem\Ex1\Shader_vs.glsl" />
     <None Include="CoordinateSystem\Shader_fs.glsl" />
     <None Include="CoordinateSystem\Shader_vs.glsl" />
-    <None Include="Lighting\Basic\colors_fs.glsl" />
-    <None Include="Lighting\Basic\colors_vs.glsl" />
-    <None Include="Lighting\Basic\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex1\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex1\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex1\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex1\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex2\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex2\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex2\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex2\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex3\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex3\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex3\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex3\light_cube_vs.glsl" />
+    <None Include="Lighting\Basic\Ex4\colors_fs.glsl" />
+    <None Include="Lighting\Basic\Ex4\colors_vs.glsl" />
+    <None Include="Lighting\Basic\Ex4\light_cube_fs.glsl" />
+    <None Include="Lighting\Basic\Ex4\light_cube_vs.glsl" />
     <None Include="Lighting\Colors\colors_vs.glsl" />
     <None Include="Lighting\Colors\colors_fs.glsl" />
     <None Include="Lighting\Colors\light_cube_fs.glsl" />
     <None Include="Lighting\Colors\light_cube_vs.glsl" />
+    <None Include="Lighting\Materials\colors_fs.glsl" />
+    <None Include="Lighting\Materials\colors_vs.glsl" />
+    <None Include="Lighting\Materials\Ex1\colors_fs.glsl" />
+    <None Include="Lighting\Materials\Ex1\colors_vs.glsl" />
+    <None Include="Lighting\Materials\Ex1\light_cube_fs.glsl" />
+    <None Include="Lighting\Materials\Ex1\light_cube_vs.glsl" />
+    <None Include="Lighting\Materials\light_cube_fs.glsl" />
+    <None Include="Lighting\Materials\light_cube_vs.glsl" />
     <None Include="Shader\Ex1\Shader_Ex1_fs.glsl" />
     <None Include="Shader\Ex1\Shader_Ex1_vs.glsl" />
     <None Include="Shader\Ex2\Shader_Ex2_fs.glsl" />

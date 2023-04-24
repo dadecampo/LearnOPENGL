@@ -76,8 +76,8 @@ int main()
 
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader lightingShader("Lighting\\Basic\\Ex1\\colors_vs.glsl", "Lighting\\Basic\\Ex1\\colors_fs.glsl");
-    Shader lightCubeShader("Lighting\\Basic\\Ex1\\light_cube_vs.glsl", "Lighting\\Basic\\Ex1\\light_cube_fs.glsl");
+    Shader lightingShader("Lighting\\Basic\\Ex2\\colors_vs.glsl", "Lighting\\Basic\\Ex2\\colors_fs.glsl");
+    Shader lightCubeShader("Lighting\\Basic\\Ex2\\light_cube_vs.glsl", "Lighting\\Basic\\Ex2\\light_cube_fs.glsl");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------

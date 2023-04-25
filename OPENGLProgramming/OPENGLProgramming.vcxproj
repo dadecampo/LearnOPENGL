@@ -137,7 +137,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="Lighting\Materials\Ex1\Materials.cpp" />
+    <ClCompile Include="Lighting\LightCasters\Experiments\LightCasters.cpp" />
+    <ClCompile Include="Lighting\LightCasters\Spotlight\LightCasters.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
@@ -159,6 +160,22 @@
     <ClInclude Include="Lighting\Basic\Ex4\shader_s.h" />
     <ClInclude Include="Lighting\Colors\camera.h" />
     <ClInclude Include="Lighting\Colors\shader_s.h" />
+    <ClInclude Include="Lighting\LightCasters\Directional\camera.h" />
+    <ClInclude Include="Lighting\LightCasters\Directional\shader_s.h" />
+    <ClInclude Include="Lighting\LightCasters\Experiments\camera.h" />
+    <ClInclude Include="Lighting\LightCasters\Experiments\shader_s.h" />
+    <ClInclude Include="Lighting\LightCasters\Point\camera.h" />
+    <ClInclude Include="Lighting\LightCasters\Point\shader_s.h" />
+    <ClInclude Include="Lighting\LightCasters\Spotlight\camera.h" />
+    <ClInclude Include="Lighting\LightCasters\Spotlight\shader_s.h" />
+    <ClInclude Include="Lighting\Maps\camera.h" />
+    <ClInclude Include="Lighting\Maps\Ex1\camera.h" />
+    <ClInclude Include="Lighting\Maps\Ex1\shader_s.h" />
+    <ClInclude Include="Lighting\Maps\Ex2\camera.h" />
+    <ClInclude Include="Lighting\Maps\Ex2\shader_s.h" />
+    <ClInclude Include="Lighting\Maps\Ex3\camera.h" />
+    <ClInclude Include="Lighting\Maps\Ex3\shader_s.h" />
+    <ClInclude Include="Lighting\Maps\shader_s.h" />
     <ClInclude Include="Lighting\Materials\camera.h" />
     <ClInclude Include="Lighting\Materials\Ex1\camera.h" />
     <ClInclude Include="Lighting\Materials\Ex1\shader_s.h" />
@@ -206,6 +223,38 @@
     <None Include="Lighting\Colors\colors_fs.glsl" />
     <None Include="Lighting\Colors\light_cube_fs.glsl" />
     <None Include="Lighting\Colors\light_cube_vs.glsl" />
+    <None Include="Lighting\LightCasters\Directional\colors_fs.glsl" />
+    <None Include="Lighting\LightCasters\Directional\colors_vs.glsl" />
+    <None Include="Lighting\LightCasters\Directional\light_cube_fs.glsl" />
+    <None Include="Lighting\LightCasters\Directional\light_cube_vs.glsl" />
+    <None Include="Lighting\LightCasters\Experiments\colors_fs.glsl" />
+    <None Include="Lighting\LightCasters\Experiments\colors_vs.glsl" />
+    <None Include="Lighting\LightCasters\Experiments\light_cube_fs.glsl" />
+    <None Include="Lighting\LightCasters\Experiments\light_cube_vs.glsl" />
+    <None Include="Lighting\LightCasters\Point\colors_fs.glsl" />
+    <None Include="Lighting\LightCasters\Point\colors_vs.glsl" />
+    <None Include="Lighting\LightCasters\Point\light_cube_fs.glsl" />
+    <None Include="Lighting\LightCasters\Point\light_cube_vs.glsl" />
+    <None Include="Lighting\LightCasters\Spotlight\colors_fs.glsl" />
+    <None Include="Lighting\LightCasters\Spotlight\colors_vs.glsl" />
+    <None Include="Lighting\LightCasters\Spotlight\light_cube_fs.glsl" />
+    <None Include="Lighting\LightCasters\Spotlight\light_cube_vs.glsl" />
+    <None Include="Lighting\Maps\colors_fs.glsl" />
+    <None Include="Lighting\Maps\colors_vs.glsl" />
+    <None Include="Lighting\Maps\Ex1\colors_fs.glsl" />
+    <None Include="Lighting\Maps\Ex1\colors_vs.glsl" />
+    <None Include="Lighting\Maps\Ex1\light_cube_fs.glsl" />
+    <None Include="Lighting\Maps\Ex1\light_cube_vs.glsl" />
+    <None Include="Lighting\Maps\Ex2\colors_fs.glsl" />
+    <None Include="Lighting\Maps\Ex2\colors_vs.glsl" />
+    <None Include="Lighting\Maps\Ex2\light_cube_fs.glsl" />
+    <None Include="Lighting\Maps\Ex2\light_cube_vs.glsl" />
+    <None Include="Lighting\Maps\Ex3\colors_fs.glsl" />
+    <None Include="Lighting\Maps\Ex3\colors_vs.glsl" />
+    <None Include="Lighting\Maps\Ex3\light_cube_fs.glsl" />
+    <None Include="Lighting\Maps\Ex3\light_cube_vs.glsl" />
+    <None Include="Lighting\Maps\light_cube_fs.glsl" />
+    <None Include="Lighting\Maps\light_cube_vs.glsl" />
     <None Include="Lighting\Materials\colors_fs.glsl" />
     <None Include="Lighting\Materials\colors_vs.glsl" />
     <None Include="Lighting\Materials\Ex1\colors_fs.glsl" />

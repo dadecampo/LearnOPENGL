@@ -18,9 +18,6 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="Lighting\LightCasters\Spotlight\LightCasters.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
     <ClCompile Include="Lighting\LightCasters\Experiments\LightCasters.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>

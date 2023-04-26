@@ -7,11 +7,22 @@
 #include <glm/glm/glm.hpp>
 #include <glm/glm/gtc/matrix_transform.hpp>
 #include <glm/glm/gtc/type_ptr.hpp>
+#include <string>
+#include <windows.h>
+
+#include <stdio.h>
 
 #include "shader_s.h"
 #include "camera.h"
 
 #include <iostream>
+
+std::string workingdir()
+{
+	char buf[256];
+	GetCurrentDirectoryA(256, buf);
+	return std::string(buf) + '\\';
+}
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -170,8 +181,11 @@ int main()
 
 	// load textures (we now use a utility function to keep the code more organized)
 	// -----------------------------------------------------------------------------
-	unsigned int diffuseMap = loadTexture("E:/Dev/LearnOPENGL/OPENGLProgramming/Resources/container2.png");
-	unsigned int specularMap = loadTexture("E:/Dev/LearnOPENGL/OPENGLProgramming/Resources/container2_specular_color.png");
+
+	std::string diffuse = "//Resources//container2.png";
+	std::string specular = "//Resources//container2_specular_color.png";
+	unsigned int diffuseMap = loadTexture((workingdir() + diffuse).c_str());
+	unsigned int specularMap = loadTexture((workingdir() + specular).c_str());
 	// shader configuration
 	// --------------------
 	lightingShader.use();

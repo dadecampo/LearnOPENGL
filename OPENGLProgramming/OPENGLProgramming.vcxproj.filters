@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="Lighting\MultipleLights\Ex1\MultipleLights.cpp">
+    <ClCompile Include="ModelLoading\ModelLoading.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -185,6 +185,18 @@
     <ClInclude Include="Lighting\MultipleLights\Ex1\shader_s.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="ModelLoading\shader_s.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoading\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoading\mesh.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoading\model.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Ex1\Shader_Ex1_vs.glsl" />
@@ -287,6 +299,10 @@
     <None Include="Lighting\MultipleLights\Ex1\colors_vs.glsl" />
     <None Include="Lighting\MultipleLights\Ex1\light_cube_fs.glsl" />
     <None Include="Lighting\MultipleLights\Ex1\light_cube_vs.glsl" />
+    <None Include="ModelLoading\model_loading_vs.glsl" />
+    <None Include="ModelLoading\model_loading_fs.glsl" />
+    <None Include="ModelLoading\light_cube_vs.glsl" />
+    <None Include="ModelLoading\light_cube_fs.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">
@@ -295,5 +311,8 @@
     <Image Include="C:\Users\david\Desktop\awesomeface.png">
       <Filter>File di risorse</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
   </ItemGroup>
 </Project>

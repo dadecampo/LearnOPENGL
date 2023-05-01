@@ -73,13 +73,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath); </IncludePath>
-<<<<<<< HEAD
-    <LibraryPath>D:\Dev\AssimpBuild\bin\Release;C:\Program Files (x86)\glfw-3.3.8\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <ExternalIncludePath>D:\Dev\AssimpBuild\include\;D:\Dev\Assimp\include\;C:\Program Files (x86)\glfw-3.3.8\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
-=======
     <LibraryPath>C:\Program Files (x86)\glfw-3.3.8\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <ExternalIncludePath>E:\Dev\AssimpBuild\include\;D:\Dev\AssimpBuild\include\;E:\Dev\Assimp\include\;D:\Dev\Assimp\include\;C:\Program Files (x86)\glfw-3.3.8\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
->>>>>>> 8494fb8a53da6d53f50032144c502eccd3eb63dc
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

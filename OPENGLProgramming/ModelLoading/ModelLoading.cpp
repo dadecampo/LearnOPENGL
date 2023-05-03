@@ -41,8 +41,6 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-
-
 int main()
 {
 	// glfw: initialize and configure
@@ -87,21 +85,100 @@ int main()
 	// -----------------------------
 	glEnable(GL_DEPTH_TEST);
 
-
-	
-	// build and compile shaders
-	// -------------------------
+	Shader lightCubeShader("ModelLoading\\light_cube_vs.glsl", "ModelLoading\\light_cube_fs.glsl");
 	Shader ourShader("ModelLoading\\model_loading_vs.glsl", "ModelLoading\\model_loading_fs.glsl");
 	std::string backpack = "Resources\\backpack\\backpack.obj";
 	// load models
 	// -----------
 	Model ourModel((workingdir() + backpack).c_str());
 
+	float vertices[] = {
+		// positions        
+		-0.5f, -0.5f, -0.5f,
+		 0.5f, -0.5f, -0.5f,
+		 0.5f,  0.5f, -0.5f,
+		 0.5f,  0.5f, -0.5f,
+		-0.5f,  0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+
+		-0.5f, -0.5f,  0.5f,
+		 0.5f, -0.5f,  0.5f,
+		 0.5f,  0.5f,  0.5f,
+		 0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f,  0.5f,
+		-0.5f, -0.5f,  0.5f,
+
+		-0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+		-0.5f, -0.5f,  0.5f,
+		-0.5f,  0.5f,  0.5f,
+
+		 0.5f,  0.5f,  0.5f,
+		 0.5f,  0.5f, -0.5f,
+		 0.5f, -0.5f, -0.5f,
+		 0.5f, -0.5f, -0.5f,
+		 0.5f, -0.5f,  0.5f,
+		 0.5f,  0.5f,  0.5f,
+
+		-0.5f, -0.5f, -0.5f,
+		 0.5f, -0.5f, -0.5f,
+		 0.5f, -0.5f,  0.5f,
+		 0.5f, -0.5f,  0.5f,
+		-0.5f, -0.5f,  0.5f,
+		-0.5f, -0.5f, -0.5f,
+
+		-0.5f,  0.5f, -0.5f,
+		 0.5f,  0.5f, -0.5f,
+		 0.5f,  0.5f,  0.5f,
+		 0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f, -0.5f
+	};
+
+	//pointlight positions
+	glm::vec3 pointLightPositions[] = {
+		glm::vec3(0.7f,  0.2f,  2.0f),
+		glm::vec3(2.3f, -3.3f, -4.0f),
+		glm::vec3(-4.0f,  2.0f, -12.0f),
+		glm::vec3(0.0f,  0.0f, -3.0f)
+	};
+
+	glm::vec3 pointLightColors[] = {
+		glm::vec3(1.0f,  1.0f,  0.0f),
+		glm::vec3(1.0f,  0.0f,  0.0f),
+		glm::vec3(1.0f,  1.0f,  0.0f),
+		glm::vec3(1.0f,  0.0f,  0.0f)
+	};
+
+	// first, configure the cube's VAO (and VBO)
+	unsigned int VBO;
+	glGenBuffers(1, &VBO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+	// second, configure the light's VAO (VBO stays the same; the vertices are the same for the light object which is also a 3D cube)
+	unsigned int lightCubeVAO;
+	glGenVertexArrays(1, &lightCubeVAO);
+	glBindVertexArray(lightCubeVAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	// note that we update the lamp's position attribute's stride to reflect the updated buffer data
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+
+
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	// render loop
 	// -----------
+	glm::vec3 dirLightColor = glm::vec3(0.70f, 0.70f, 0.0f);
+	glm::vec3 spotLightColor = glm::vec3(0.0f);
+
 	while (!glfwWindowShouldClose(window))
 	{
 		// per-frame time logic
@@ -119,6 +196,79 @@ int main()
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+
+		// be sure to activate shader when setting uniforms/drawing objects
+		ourShader.use();
+		ourShader.setVec3("viewPos", camera.Position);
+		ourShader.setFloat("material.shininess", 32.0f);
+
+		/*
+		   Here we set all the uniforms for the 5/6 types of lights we have. We have to set them manually and index
+		   the proper PointLight struct in the array to set each uniform variable. This can be done more code-friendly
+		   by defining light types as classes and set their values in there, or by using a more efficient uniform approach
+		   by using 'Uniform buffer objects', but that is something we'll discuss in the 'Advanced GLSL' tutorial.
+		*/
+		// directional light
+		ourShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
+		ourShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
+		ourShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+		ourShader.setVec3("dirLight.color", dirLightColor);
+		// point light 1
+		glm::vec3 pointLightPositionMoved[] = { pointLightPositions[0], pointLightPositions[1], pointLightPositions[2], pointLightColors[3] };
+		for (int i = 0; i <= pointLightPositions->length(); i++) {
+			pointLightPositionMoved[i] = glm::vec3(pointLightPositions[i].x * cos((float)glfwGetTime() * 10), pointLightPositions[i].y * sin((float)glfwGetTime() * 10), pointLightPositions[i].z);
+		}
+
+		ourShader.setVec3("pointLights[0].position", pointLightPositionMoved[0]);
+		ourShader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
+		ourShader.setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
+		ourShader.setFloat("pointLights[0].constant", 1.0f);
+		ourShader.setFloat("pointLights[0].linear", 0.09f);
+		ourShader.setFloat("pointLights[0].quadratic", 0.032f);
+		ourShader.setVec3("pointLights[0].color", pointLightColors[0]);
+
+		// point light 2
+		ourShader.setVec3("pointLights[1].position", pointLightPositionMoved[1]);
+		ourShader.setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
+		ourShader.setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
+		ourShader.setFloat("pointLights[1].constant", 1.0f);
+		ourShader.setFloat("pointLights[1].linear", 0.09f);
+		ourShader.setFloat("pointLights[1].quadratic", 0.032f);
+		ourShader.setVec3("pointLights[1].color", pointLightColors[1]);
+		// point light 3
+		ourShader.setVec3("pointLights[2].position", pointLightPositionMoved[2]);
+		ourShader.setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
+		ourShader.setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
+		ourShader.setFloat("pointLights[2].constant", 1.0f);
+		ourShader.setFloat("pointLights[2].linear", 0.09f);
+		ourShader.setFloat("pointLights[2].quadratic", 0.032f);
+		ourShader.setVec3("pointLights[2].color", pointLightColors[2]);
+		// point light 4
+		ourShader.setVec3("pointLights[3].position", pointLightPositionMoved[3]);
+		ourShader.setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
+		ourShader.setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
+		ourShader.setFloat("pointLights[3].constant", 1.0f);
+		ourShader.setFloat("pointLights[3].linear", 0.09f);
+		ourShader.setFloat("pointLights[3].quadratic", 0.032f);
+		ourShader.setVec3("pointLights[3].color", pointLightColors[3]);
+		// spotLight
+		ourShader.setVec3("spotLight.position", camera.Position);
+		ourShader.setVec3("spotLight.direction", camera.Front);
+		ourShader.setVec3("spotLight.ambient", 0.0f, 0.0f, 0.0f);
+		ourShader.setVec3("spotLight.diffuse", 1.0f, 1.0f, 1.0f);
+		ourShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
+		ourShader.setFloat("spotLight.constant", 1.0f);
+		ourShader.setFloat("spotLight.linear", 0.09f);
+		ourShader.setFloat("spotLight.quadratic", 0.032f);
+		ourShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
+		ourShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));
+		ourShader.setVec3("spotLight.color", spotLightColor);
+
 		// don't forget to enable shader before setting uniforms
 		ourShader.use();
 
@@ -135,6 +285,22 @@ int main()
 		ourShader.setMat4("model", model);
 		ourModel.Draw(ourShader);
 
+		// also draw the lamp object(s)
+		lightCubeShader.use();
+		lightCubeShader.setMat4("projection", projection);
+		lightCubeShader.setMat4("view", view);
+
+		// we now draw as many light bulbs as we have point lights.
+		glBindVertexArray(lightCubeVAO);
+		for (unsigned int i = 0; i < 4; i++)
+		{
+			model = glm::mat4(1.0f);
+			model = glm::translate(model, pointLightPositionMoved[i]);
+			model = glm::scale(model, glm::vec3(0.2f)); // Make it a smaller cube
+			lightCubeShader.setMat4("model", model);
+			lightCubeShader.setVec3("color", pointLightColors[i]);
+			glDrawArrays(GL_TRIANGLES, 0, 36);
+		}
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------
 		glfwSwapBuffers(window);

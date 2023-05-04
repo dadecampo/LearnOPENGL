@@ -18,7 +18,34 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="ModelLoading\ModelLoading.cpp">
+    <ClCompile Include="SkeletalModel\SkeletalModel.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\AnimationScene.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\drawable.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\gl_core_4_3.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\glslprogram.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\glutils.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\Math3D.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\QuatCamera.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\TeapotAD.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalModel\stdafx.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,283 +53,54 @@
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Shader\Ex1\Shader_Ex1.h">
+    <ClInclude Include="SkeletalModel\SkeletalModel.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Shader\Ex2\Shader_Ex2.h">
+    <ClInclude Include="SkeletalModel\AnimationScene.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Shader\Ex3\Shader_Ex3.h">
+    <ClInclude Include="SkeletalModel\defines.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Texture\shader_s.h">
+    <ClInclude Include="SkeletalModel\drawable.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Texture\Ex1\shader_s.h">
+    <ClInclude Include="SkeletalModel\gl_core_4_3.hpp">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Texture\Ex2\shader_s.h">
+    <ClInclude Include="SkeletalModel\glslprogram.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Texture\Ex3\shader_s.h">
+    <ClInclude Include="SkeletalModel\glutils.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Texture\Ex4\shader_s.h">
+    <ClInclude Include="SkeletalModel\Math3D.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Transformation\shader_s.h">
+    <ClInclude Include="SkeletalModel\QuatCamera.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="CoordinateSystem\shader_s.h">
+    <ClInclude Include="SkeletalModel\scene.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Transformation\Ex1\shader_s.h">
+    <ClInclude Include="SkeletalModel\stdafx.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Transformation\Ex2\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="CoordinateSystem\Ex1\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera\Ex1\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera\Ex1\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera\Ex2\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera\Ex2\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Colors\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Colors\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex1\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex1\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex2\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex2\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex3\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex3\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex4\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Basic\Ex4\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Materials\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Materials\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Materials\Ex1\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Materials\Ex1\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\Ex1\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\Ex1\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\Ex2\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\Ex2\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\Ex3\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\Maps\Ex3\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Directional\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Directional\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Point\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Point\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Spotlight\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Spotlight\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Experiments\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\LightCasters\Experiments\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\MultipleLights\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\MultipleLights\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\MultipleLights\Ex1\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Lighting\MultipleLights\Ex1\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelLoading\shader_s.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelLoading\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelLoading\mesh.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelLoading\model.h">
+    <ClInclude Include="SkeletalModel\targetver.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shader\Ex1\Shader_Ex1_vs.glsl" />
-    <None Include="Shader\Ex1\Shader_Ex1_fs.glsl" />
-    <None Include="Shader\Ex2\Shader_Ex2_vs.glsl" />
-    <None Include="Shader\Ex2\Shader_Ex2_fs.glsl" />
-    <None Include="Shader\Ex3\Shader_Ex3_vs.glsl" />
-    <None Include="Shader\Ex3\Shader_Ex3_fs.glsl" />
-    <None Include="Texture\Shader_fs.glsl" />
-    <None Include="Texture\Shader_vs.glsl" />
-    <None Include="Texture\Ex1\Shader_fs.glsl" />
-    <None Include="Texture\Ex1\Shader_vs.glsl" />
-    <None Include="Texture\Ex2\Shader_vs.glsl" />
-    <None Include="Texture\Ex2\Shader_fs.glsl" />
-    <None Include="Texture\Ex3\Shader_fs.glsl" />
-    <None Include="Texture\Ex3\Shader_vs.glsl" />
-    <None Include="Texture\Ex4\Shader_vs.glsl" />
-    <None Include="Texture\Ex4\Shader_fs.glsl" />
-    <None Include="Transformation\Shader_fs.glsl" />
-    <None Include="Transformation\Shader_vs.glsl" />
-    <None Include="CoordinateSystem\Shader_fs.glsl" />
-    <None Include="CoordinateSystem\Shader_vs.glsl" />
-    <None Include="Transformation\Ex1\Shader_fs.glsl" />
-    <None Include="Transformation\Ex1\Shader_vs.glsl" />
-    <None Include="Transformation\Ex2\Shader_fs.glsl" />
-    <None Include="Transformation\Ex2\Shader_vs.glsl" />
-    <None Include="CoordinateSystem\Ex1\Shader_fs.glsl" />
-    <None Include="CoordinateSystem\Ex1\Shader_vs.glsl" />
-    <None Include="Camera\Shader_fs.glsl" />
-    <None Include="Camera\Shader_vs.glsl" />
-    <None Include="Camera\Ex1\Shader_vs.glsl" />
-    <None Include="Camera\Ex1\Shader_fs.glsl" />
-    <None Include="Camera\Ex2\Shader_vs.glsl" />
-    <None Include="Camera\Ex2\Shader_fs.glsl" />
-    <None Include="Lighting\Colors\colors_vs.glsl" />
-    <None Include="Lighting\Colors\colors_fs.glsl" />
-    <None Include="Lighting\Colors\light_cube_vs.glsl" />
-    <None Include="Lighting\Colors\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\Ex1\colors_fs.glsl" />
-    <None Include="Lighting\Basic\Ex1\colors_vs.glsl" />
-    <None Include="Lighting\Basic\Ex1\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\Ex1\light_cube_vs.glsl" />
-    <None Include="Lighting\Basic\Ex2\colors_fs.glsl" />
-    <None Include="Lighting\Basic\Ex2\colors_vs.glsl" />
-    <None Include="Lighting\Basic\Ex2\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\Ex2\light_cube_vs.glsl" />
-    <None Include="Lighting\Basic\Ex3\colors_vs.glsl" />
-    <None Include="Lighting\Basic\Ex3\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\Ex3\light_cube_vs.glsl" />
-    <None Include="Lighting\Basic\Ex3\colors_fs.glsl" />
-    <None Include="Lighting\Basic\Ex4\colors_fs.glsl" />
-    <None Include="Lighting\Basic\Ex4\colors_vs.glsl" />
-    <None Include="Lighting\Basic\Ex4\light_cube_fs.glsl" />
-    <None Include="Lighting\Basic\Ex4\light_cube_vs.glsl" />
-    <None Include="Lighting\Materials\colors_fs.glsl" />
-    <None Include="Lighting\Materials\colors_vs.glsl" />
-    <None Include="Lighting\Materials\light_cube_fs.glsl" />
-    <None Include="Lighting\Materials\light_cube_vs.glsl" />
-    <None Include="Lighting\Materials\Ex1\colors_fs.glsl" />
-    <None Include="Lighting\Materials\Ex1\colors_vs.glsl" />
-    <None Include="Lighting\Materials\Ex1\light_cube_fs.glsl" />
-    <None Include="Lighting\Materials\Ex1\light_cube_vs.glsl" />
-    <None Include="Lighting\Maps\colors_fs.glsl" />
-    <None Include="Lighting\Maps\colors_vs.glsl" />
-    <None Include="Lighting\Maps\light_cube_fs.glsl" />
-    <None Include="Lighting\Maps\light_cube_vs.glsl" />
-    <None Include="Lighting\Maps\Ex1\colors_fs.glsl" />
-    <None Include="Lighting\Maps\Ex1\colors_vs.glsl" />
-    <None Include="Lighting\Maps\Ex1\light_cube_fs.glsl" />
-    <None Include="Lighting\Maps\Ex1\light_cube_vs.glsl" />
-    <None Include="Lighting\Maps\Ex2\colors_fs.glsl" />
-    <None Include="Lighting\Maps\Ex2\colors_vs.glsl" />
-    <None Include="Lighting\Maps\Ex2\light_cube_fs.glsl" />
-    <None Include="Lighting\Maps\Ex2\light_cube_vs.glsl" />
-    <None Include="Lighting\Maps\Ex3\colors_fs.glsl" />
-    <None Include="Lighting\Maps\Ex3\colors_vs.glsl" />
-    <None Include="Lighting\Maps\Ex3\light_cube_fs.glsl" />
-    <None Include="Lighting\Maps\Ex3\light_cube_vs.glsl" />
-    <None Include="Lighting\LightCasters\Directional\colors_fs.glsl" />
-    <None Include="Lighting\LightCasters\Directional\colors_vs.glsl" />
-    <None Include="Lighting\LightCasters\Directional\light_cube_fs.glsl" />
-    <None Include="Lighting\LightCasters\Directional\light_cube_vs.glsl" />
-    <None Include="Lighting\LightCasters\Point\colors_fs.glsl" />
-    <None Include="Lighting\LightCasters\Point\colors_vs.glsl" />
-    <None Include="Lighting\LightCasters\Point\light_cube_fs.glsl" />
-    <None Include="Lighting\LightCasters\Point\light_cube_vs.glsl" />
-    <None Include="Lighting\LightCasters\Spotlight\colors_fs.glsl" />
-    <None Include="Lighting\LightCasters\Spotlight\colors_vs.glsl" />
-    <None Include="Lighting\LightCasters\Spotlight\light_cube_fs.glsl" />
-    <None Include="Lighting\LightCasters\Spotlight\light_cube_vs.glsl" />
-    <None Include="Lighting\LightCasters\Experiments\colors_fs.glsl" />
-    <None Include="Lighting\LightCasters\Experiments\colors_vs.glsl" />
-    <None Include="Lighting\LightCasters\Experiments\light_cube_fs.glsl" />
-    <None Include="Lighting\LightCasters\Experiments\light_cube_vs.glsl" />
-    <None Include="Lighting\MultipleLights\colors_fs.glsl" />
-    <None Include="Lighting\MultipleLights\colors_vs.glsl" />
-    <None Include="Lighting\MultipleLights\light_cube_fs.glsl" />
-    <None Include="Lighting\MultipleLights\light_cube_vs.glsl" />
-    <None Include="Lighting\MultipleLights\Ex1\colors_fs.glsl" />
-    <None Include="Lighting\MultipleLights\Ex1\colors_vs.glsl" />
-    <None Include="Lighting\MultipleLights\Ex1\light_cube_fs.glsl" />
-    <None Include="Lighting\MultipleLights\Ex1\light_cube_vs.glsl" />
-    <None Include="ModelLoading\model_loading_vs.glsl" />
-    <None Include="ModelLoading\model_loading_fs.glsl" />
-    <None Include="ModelLoading\light_cube_vs.glsl" />
-    <None Include="ModelLoading\light_cube_fs.glsl" />
+    <None Include="Assets\Minotaur%40Walk.FBX" />
+    <None Include="Assets\astroBoy_walk_Maya.dae" />
+    <None Include="Assets\mech.fbx" />
+    <None Include="Assets\Minotaur%40Attack.FBX" />
+    <None Include="Assets\Minotaur%40Death1.FBX" />
+    <None Include="Assets\Minotaur%40Jump.FBX" />
+    <None Include="Shaders\diffuse.vert" />
+    <None Include="Shaders\desktop.ini" />
+    <None Include="Shaders\diffuse.frag" />
+    <None Include="SkeletalModel\desktop.ini" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">

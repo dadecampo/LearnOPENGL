@@ -43,9 +43,14 @@ void AnimationScene::initScene(QuatCamera camera)
 	m_AnimatedModel = new SkeletalModel(prog);
 	
 	// Load the model from the given path. 
-	m_AnimatedModel->LoadMesh("Assets/Minotaur@Jump.FBX");
+	//m_AnimatedModel->LoadMesh("Assets/Minotaur@Jump.FBX");
 	//m_AnimatedModel->LoadMesh("Assets/astroBoy_walk_Maya.dae");
+	m_AnimatedModel->LoadMesh("Assets/nervousLink.fbx");
+	//m_AnimatedModel->LoadMesh("Assets/link.fbx");
 	//m_AnimatedModel->LoadMesh("Assets/mech.fbx");
+
+	camera.setPosition(vec3(0, 0, 0));
+
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +92,7 @@ void AnimationScene::render(QuatCamera camera)
 	// Model matrix 
 	model = mat4(1.0f);
 	//model = glm::translate(glm::vec3(0.0, -20.0, 0.0));
-	model = glm::scale(glm::vec3(0.2f));
+	model = glm::scale(glm::vec3(0.0025f));
 
 	setMatrices(camera);
 

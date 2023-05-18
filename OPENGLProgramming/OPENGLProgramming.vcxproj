@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
     <ClInclude Include="SkeletalModel\AnimationScene.h" />
+    <ClInclude Include="SkeletalModel\camera.h" />
     <ClInclude Include="SkeletalModel\defines.h" />
     <ClInclude Include="SkeletalModel\drawable.h" />
     <ClInclude Include="SkeletalModel\glslprogram.h" />
@@ -165,11 +166,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\astroBoy_walk_Maya.dae" />
+    <None Include="Assets\dancingLink2.fbx" />
+    <None Include="Assets\dancingLink3.fbx" />
+    <None Include="Assets\Kika.fbx" />
+    <None Include="Assets\link.fbx" />
+    <None Include="Assets\linkSkinned.fbx" />
+    <None Include="Assets\Link\dancingLink.fbx" />
+    <None Include="Assets\Link\dancingLink2.fbx" />
     <None Include="Assets\mech.fbx" />
     <None Include="Assets\Minotaur%40Attack.FBX" />
     <None Include="Assets\Minotaur%40Death1.FBX" />
     <None Include="Assets\Minotaur%40Jump.FBX" />
     <None Include="Assets\Minotaur%40Walk.FBX" />
+    <None Include="Assets\nervousLink.fbx" />
+    <None Include="Assets\nervousLinkUnskinned.fbx" />
+    <None Include="C:\Users\david\Downloads\Jumping.fbx" />
     <None Include="Shaders\desktop.ini" />
     <None Include="Shaders\diffuse.frag" />
     <None Include="Shaders\diffuse.vert" />

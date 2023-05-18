@@ -89,6 +89,9 @@
     <ClInclude Include="SkeletalModel\targetver.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="SkeletalModel\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Minotaur%40Walk.FBX" />
@@ -101,6 +104,16 @@
     <None Include="Shaders\desktop.ini" />
     <None Include="Shaders\diffuse.frag" />
     <None Include="SkeletalModel\desktop.ini" />
+    <None Include="C:\Users\david\Downloads\Jumping.fbx" />
+    <None Include="Assets\Kika.fbx" />
+    <None Include="Assets\Link\dancingLink.fbx" />
+    <None Include="Assets\Link\dancingLink2.fbx" />
+    <None Include="Assets\dancingLink2.fbx" />
+    <None Include="Assets\dancingLink3.fbx" />
+    <None Include="Assets\nervousLink.fbx" />
+    <None Include="Assets\linkSkinned.fbx" />
+    <None Include="Assets\nervousLinkUnskinned.fbx" />
+    <None Include="Assets\link.fbx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">

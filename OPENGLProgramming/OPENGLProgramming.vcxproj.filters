@@ -114,6 +114,8 @@
     <None Include="Assets\linkSkinned.fbx" />
     <None Include="Assets\nervousLinkUnskinned.fbx" />
     <None Include="Assets\link.fbx" />
+    <None Include="Assets\Link\nervousLink.fbx" />
+    <None Include="Assets\Link\link.dae" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">

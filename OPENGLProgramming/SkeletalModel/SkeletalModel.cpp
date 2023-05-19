@@ -48,6 +48,7 @@ void SkeletalModel::LoadMesh(const std::string& Filename)
 		aiProcess_Triangulate | 
 		aiProcess_GenSmoothNormals | 
 		aiProcess_FlipUVs |
+		aiProcess_CalcTangentSpace |
 		aiProcess_LimitBoneWeights);
 
 	if (pScene) {
@@ -119,18 +120,18 @@ void SkeletalModel::InitFromScene(const aiScene* pScene, const std::string& File
 	gl::VertexAttribPointer(1, 3, gl::FLOAT, FALSE, sizeof(VertexStruct), (GLvoid*)offsetof(VertexStruct, normal));
 
 	//// Vertex Texture Coords
-	//gl::EnableVertexAttribArray(2);
-	//gl::VertexAttribPointer(2, 2, gl::FLOAT, FALSE, sizeof(VertexStruct), (GLvoid*)offsetof(VertexStruct, uvs));
+	gl::EnableVertexAttribArray(2);
+	gl::VertexAttribPointer(2, 2, gl::FLOAT, FALSE, sizeof(VertexStruct), (GLvoid*)offsetof(VertexStruct, uvs));
 
 	// Bind the bone data buffer object
 	gl::BindBuffer(gl::ARRAY_BUFFER, boneBo);
 	gl::BufferData(gl::ARRAY_BUFFER, sizeof(bones[0]) * bones.size(), &bones[0], gl::STATIC_DRAW);
 
-	gl::EnableVertexAttribArray(2);
-	gl::VertexAttribIPointer(2, 4, gl::INT, sizeof(VertexBoneData), (const GLvoid*)0);
-
 	gl::EnableVertexAttribArray(3);
-	gl::VertexAttribPointer(3, 4, gl::FLOAT, FALSE, sizeof(VertexBoneData), (const GLvoid*)16);
+	gl::VertexAttribIPointer(3, 4, gl::INT, sizeof(VertexBoneData), (const GLvoid*)0);
+
+	gl::EnableVertexAttribArray(4);
+	gl::VertexAttribPointer(4, 4, gl::FLOAT, FALSE, sizeof(VertexBoneData), (const GLvoid*)16);
 
 	gl::BindBuffer(gl::ELEMENT_ARRAY_BUFFER, ebo);
 	gl::BufferData(gl::ELEMENT_ARRAY_BUFFER, sizeof(Indices[0]) * Indices.size(), &Indices[0],

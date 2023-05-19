@@ -173,6 +173,8 @@
     <None Include="Assets\linkSkinned.fbx" />
     <None Include="Assets\Link\dancingLink.fbx" />
     <None Include="Assets\Link\dancingLink2.fbx" />
+    <None Include="Assets\Link\link.dae" />
+    <None Include="Assets\Link\nervousLink.fbx" />
     <None Include="Assets\mech.fbx" />
     <None Include="Assets\Minotaur%40Attack.FBX" />
     <None Include="Assets\Minotaur%40Death1.FBX" />

@@ -18,80 +18,9 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="SkeletalModel\SkeletalModel.cpp">
+    <ClCompile Include="SkeletalModelTexture\Skeletal.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="SkeletalModel\AnimationScene.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\drawable.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\gl_core_4_3.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\glslprogram.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\glutils.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\Math3D.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\QuatCamera.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\TeapotAD.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletalModel\stdafx.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\SkeletalModel.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\AnimationScene.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\defines.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\drawable.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\gl_core_4_3.hpp">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\glslprogram.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\glutils.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\Math3D.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\QuatCamera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\scene.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\stdafx.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\targetver.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletalModel\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Minotaur%40Walk.FBX" />
@@ -103,8 +32,6 @@
     <None Include="Shaders\diffuse.vert" />
     <None Include="Shaders\desktop.ini" />
     <None Include="Shaders\diffuse.frag" />
-    <None Include="SkeletalModel\desktop.ini" />
-    <None Include="C:\Users\david\Downloads\Jumping.fbx" />
     <None Include="Assets\Kika.fbx" />
     <None Include="Assets\Link\dancingLink.fbx" />
     <None Include="Assets\Link\dancingLink2.fbx" />
@@ -116,6 +43,13 @@
     <None Include="Assets\link.fbx" />
     <None Include="Assets\Link\nervousLink.fbx" />
     <None Include="Assets\Link\link.dae" />
+    <None Include="x64\Debug\assimp-vc142-mt.dll" />
+    <None Include="SkeletalModelTexture\anim_model.fs" />
+    <None Include="SkeletalModelTexture\anim_model.vs" />
+    <None Include="Assets\vampire\dancing_vampire.dae" />
+    <None Include="Assets\Link\nervousLink2.fbx" />
+    <None Include="Assets\timmy.fbx" />
+    <None Include="SkeletalModelTexture\pupil_shader.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">
@@ -127,5 +61,34 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SkeletalModelTexture\shader.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\animation.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\animator.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\animdata.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\assimp_glm_helpers.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\bone.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\mesh.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalModelTexture\model_animation.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

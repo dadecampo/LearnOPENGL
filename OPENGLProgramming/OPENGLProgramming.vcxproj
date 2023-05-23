@@ -111,6 +111,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,32 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="SkeletalModel\AnimationScene.cpp" />
-    <ClCompile Include="SkeletalModel\drawable.cpp" />
-    <ClCompile Include="SkeletalModel\glslprogram.cpp" />
-    <ClCompile Include="SkeletalModel\glutils.cpp" />
-    <ClCompile Include="SkeletalModel\gl_core_4_3.cpp" />
-    <ClCompile Include="SkeletalModel\Math3D.cpp" />
-    <ClCompile Include="SkeletalModel\QuatCamera.cpp" />
-    <ClCompile Include="SkeletalModel\SkeletalModel.cpp" />
-    <ClCompile Include="SkeletalModel\stdafx.cpp" />
-    <ClCompile Include="SkeletalModel\TeapotAD.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C:\Program Files (x86)\glfw-3.3.8\include\glad\glad.h" />
-    <ClInclude Include="SkeletalModel\AnimationScene.h" />
-    <ClInclude Include="SkeletalModel\camera.h" />
-    <ClInclude Include="SkeletalModel\defines.h" />
-    <ClInclude Include="SkeletalModel\drawable.h" />
-    <ClInclude Include="SkeletalModel\glslprogram.h" />
-    <ClInclude Include="SkeletalModel\glutils.h" />
-    <ClInclude Include="SkeletalModel\gl_core_4_3.hpp" />
-    <ClInclude Include="SkeletalModel\Math3D.h" />
-    <ClInclude Include="SkeletalModel\QuatCamera.h" />
-    <ClInclude Include="SkeletalModel\scene.h" />
-    <ClInclude Include="SkeletalModel\SkeletalModel.h" />
-    <ClInclude Include="SkeletalModel\stdafx.h" />
-    <ClInclude Include="SkeletalModel\targetver.h" />
+    <ClCompile Include="SkeletalModelTexture\Skeletal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\astroBoy_walk_Maya.dae" />
@@ -175,6 +152,7 @@
     <None Include="Assets\Link\dancingLink2.fbx" />
     <None Include="Assets\Link\link.dae" />
     <None Include="Assets\Link\nervousLink.fbx" />
+    <None Include="Assets\Link\nervousLink2.fbx" />
     <None Include="Assets\mech.fbx" />
     <None Include="Assets\Minotaur%40Attack.FBX" />
     <None Include="Assets\Minotaur%40Death1.FBX" />
@@ -182,11 +160,15 @@
     <None Include="Assets\Minotaur%40Walk.FBX" />
     <None Include="Assets\nervousLink.fbx" />
     <None Include="Assets\nervousLinkUnskinned.fbx" />
-    <None Include="C:\Users\david\Downloads\Jumping.fbx" />
+    <None Include="Assets\timmy.fbx" />
+    <None Include="Assets\vampire\dancing_vampire.dae" />
     <None Include="Shaders\desktop.ini" />
     <None Include="Shaders\diffuse.frag" />
     <None Include="Shaders\diffuse.vert" />
-    <None Include="SkeletalModel\desktop.ini" />
+    <None Include="SkeletalModelTexture\anim_model.fs" />
+    <None Include="SkeletalModelTexture\anim_model.vs" />
+    <None Include="SkeletalModelTexture\pupil_shader.fs" />
+    <None Include="x64\Debug\assimp-vc142-mt.dll" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\awesomeface.png" />
@@ -194,6 +176,17 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SkeletalModelTexture\animation.h" />
+    <ClInclude Include="SkeletalModelTexture\animator.h" />
+    <ClInclude Include="SkeletalModelTexture\animdata.h" />
+    <ClInclude Include="SkeletalModelTexture\assimp_glm_helpers.h" />
+    <ClInclude Include="SkeletalModelTexture\bone.h" />
+    <ClInclude Include="SkeletalModelTexture\camera.h" />
+    <ClInclude Include="SkeletalModelTexture\mesh.h" />
+    <ClInclude Include="SkeletalModelTexture\model_animation.h" />
+    <ClInclude Include="SkeletalModelTexture\shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

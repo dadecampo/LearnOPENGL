@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="SkeletalModelTexture\Skeletal.cpp">
+    <ClCompile Include="NormalMapping\NormalMapping.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,12 +44,16 @@
     <None Include="Assets\Link\nervousLink.fbx" />
     <None Include="Assets\Link\link.dae" />
     <None Include="x64\Debug\assimp-vc142-mt.dll" />
-    <None Include="SkeletalModelTexture\anim_model.fs" />
-    <None Include="SkeletalModelTexture\anim_model.vs" />
     <None Include="Assets\vampire\dancing_vampire.dae" />
     <None Include="Assets\Link\nervousLink2.fbx" />
     <None Include="Assets\timmy.fbx" />
-    <None Include="SkeletalModelTexture\pupil_shader.fs" />
+    <None Include="Assets\timmy\timmy.dae" />
+    <None Include="NormalMapping\anim_model.fs" />
+    <None Include="NormalMapping\anim_model.vs" />
+    <None Include="NormalMapping\light_cube_fs.glsl" />
+    <None Include="NormalMapping\light_cube_vs.glsl" />
+    <None Include="NormalMapping\pupil_shader.fs" />
+    <None Include="NormalMapping\pupil_shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">
@@ -58,36 +62,48 @@
     <Image Include="C:\Users\david\Desktop\awesomeface.png">
       <Filter>File di risorse</Filter>
     </Image>
+    <Image Include="Assets\timmy\textures\Ch09_1001_Specular.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Assets\timmy\textures\Ch09_1001_Diffuse.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Assets\timmy\textures\Ch09_1001_Glossiness.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Assets\timmy\textures\Ch09_1001_Normal.png">
+      <Filter>File di risorse</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SkeletalModelTexture\shader.h">
+    <ClInclude Include="NormalMapping\shader.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\animation.h">
+    <ClInclude Include="NormalMapping\animation.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\animator.h">
+    <ClInclude Include="NormalMapping\animator.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\animdata.h">
+    <ClInclude Include="NormalMapping\animdata.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\assimp_glm_helpers.h">
+    <ClInclude Include="NormalMapping\assimp_glm_helpers.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\bone.h">
+    <ClInclude Include="NormalMapping\bone.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\camera.h">
+    <ClInclude Include="NormalMapping\camera.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\mesh.h">
+    <ClInclude Include="NormalMapping\mesh.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletalModelTexture\model_animation.h">
+    <ClInclude Include="NormalMapping\model_animation.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

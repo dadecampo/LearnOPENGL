@@ -78,20 +78,6 @@ public:
 
 	void DrawFace(Shader& shader)
 	{
-		if (rendering_order.size() != 0) {
-			for (int i = 0; i < meshes_face.size(); i++) {
-				auto meshCurr = meshes_face[i];
-				int orderCurr = getTextureOrder(meshes_face[i].textures[0].path);
-				for (int j = i + 1; j < meshes_face.size(); j++) {
-					int orderPoss = getTextureOrder(meshes_face[j].textures[0].path);
-					if (orderPoss < orderCurr) {
-						meshes_face[i] = meshes_face[j];
-						meshes_face[j] = meshCurr;
-						orderCurr = orderPoss;
-					}
-				}
-			}
-		}
 		for (int i = 0; i < meshes_face.size(); i++)
 			meshes_face[i].Draw(shader);
 	}
@@ -143,7 +129,6 @@ private:
 	}
 
 	void initializeTextureFacial() {
-		textures_face.push_back("eyebrow1");
 		textures_face.push_back("eye1");
 		textures_face.push_back("pupil");
 	}
@@ -152,11 +137,8 @@ private:
 		rendering_order.push_back("mouth1");
 		rendering_order.push_back("body");
 		rendering_order.push_back("sheath");
-		rendering_order.push_back("eye1");
-		rendering_order.push_back("pupil");
-		rendering_order.push_back("eyebrow1");
-
 		//rendering_order.push_back("eye1");
+		rendering_order.push_back("eyebrow1");
 		//rendering_order.push_back("pupil");
 	}
 

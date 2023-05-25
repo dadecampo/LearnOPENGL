@@ -45,7 +45,7 @@ void AnimationScene::initScene(QuatCamera camera)
 	// Load the model from the given path. 
 	//m_AnimatedModel->LoadMesh("Assets/Minotaur@Jump.FBX");
 	//m_AnimatedModel->LoadMesh("Assets/astroBoy_walk_Maya.dae");
-	m_AnimatedModel->LoadMesh("Assets/Link/nervousLink2.fbx");
+	m_AnimatedModel->LoadMesh("Assets/timmy/timmy.dae");
 	//m_AnimatedModel->LoadMesh("Assets/link.fbx");
 	//m_AnimatedModel->LoadMesh("Assets/mech.fbx");
 

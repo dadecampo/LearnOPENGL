@@ -91,11 +91,12 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
 
-	glEnable(GL_CULL_FACE);
 
 	// build and compile shaders
 	// -------------------------
 	Shader ourShader("SkeletalModelTexture\\anim_model.vs", "SkeletalModelTexture\\anim_model.fs");
+	Shader pupilShader("SkeletalModelTexture\\pupil_shader.vs", "SkeletalModelTexture\\pupil_shader.fs");
+
 
 	std::string link = "/LinkPraying/link.fbx";
 	std::string gonzo = "/Gonzo/Gonzo.fbx";
@@ -110,6 +111,22 @@ int main()
 	Animation tauntingAnimation(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + gonzo).c_str(), &gonzoModel);
 	Animator gonzoAnimator(&tauntingAnimation);
 
+	//pointlight positions
+	glm::vec3 pointLightPositions[] = {
+		glm::vec3(0.0f,  1.0f,  1.0f)
+	};
+
+	glm::vec3 pointLightColors[] = {
+		glm::vec3(1.0f,  1.0f,  1.0f)
+	};
+
+	glm::vec3 dirLightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+	glm::vec3 spotLightColor = glm::vec3(1.0f);
+	// first, configure the cube's VAO (and VBO)
+	// second, configure the light's VAO (VBO stays the same; the vertices are the same for the light object which is also a 3D cube)
+	unsigned int lightCubeVAO;
+	glGenVertexArrays(1, &lightCubeVAO);
+	glBindVertexArray(lightCubeVAO);
 
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -130,13 +147,46 @@ int main()
 		linkAnimator.UpdateAnimation(deltaTime);
 		gonzoAnimator.UpdateAnimation(deltaTime);
 
-
 		// render
 		// ------
 		glClearColor(0.85f, 0.75f, 0.35f, 1.0f);
 		glClearDepth(GL_DEPTH_BUFFER_BIT);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		// don't forget to enable shader before setting uniforms
+		ourShader.use();
+		ourShader.setVec3("viewPos", camera.Position);
+		ourShader.setFloat("material.shininess", 64.0f);
+		ourShader.setVec3("dirLight.direction", 1.0f, -1.0f, 1.0f);
+		ourShader.setVec3("dirLight.ambient", 0.4f, 0.4f, 0.4f);
+		ourShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
+		ourShader.setVec3("dirLight.specular", 0.15f, 0.15f, 0.15f);
+		ourShader.setVec3("dirLight.color", dirLightColor);
+		// point light 1
+		glm::vec3 pointLightPositionMoved[] = { pointLightPositions[0] };
 
+		ourShader.setVec3("pointLights[0].position", pointLightPositionMoved[0]);
+		ourShader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
+		ourShader.setVec3("pointLights[0].specular", 0.2f, 0.2f, 0.2f);
+		ourShader.setFloat("pointLights[0].constant", 1.0f);
+		ourShader.setFloat("pointLights[0].linear", 0.09f);
+		ourShader.setFloat("pointLights[0].quadratic", 0.032f);
+		ourShader.setVec3("pointLights[0].color", pointLightColors[0]);
+
+		// spotLight
+		ourShader.setVec3("spotLight.position", camera.Position);
+		ourShader.setVec3("spotLight.direction", camera.Front);
+		ourShader.setVec3("spotLight.ambient", 0.0f, 0.0f, 0.0f);
+		ourShader.setVec3("spotLight.diffuse", 1.0f, 1.0f, 1.0f);
+		ourShader.setVec3("spotLight.specular", 0.2f, 0.2f, 0.2f);
+		ourShader.setFloat("spotLight.constant", 1.0f);
+		ourShader.setFloat("spotLight.linear", 0.09f);
+		ourShader.setFloat("spotLight.quadratic", 0.032f);
+		ourShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
+		ourShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));
+		ourShader.setVec3("spotLight.color", spotLightColor);
+
+		ourShader.use();
 		// don't forget to enable shader before setting uniforms
 		ourShader.use();
 
@@ -147,26 +197,25 @@ int main()
 		ourShader.setMat4("projection", projection);
 		ourShader.setMat4("view", view);
 
-		auto transforms = linkAnimator.GetFinalBoneMatrices();
-		for (int i = 0; i < transforms.size(); ++i)
-			ourShader.setMat4("finalBonesMatrices[" + std::to_string(i) + "]", transforms[i]);
+		auto transformsLink = linkAnimator.GetFinalBoneMatrices();
+		for (int i = 0; i < transformsLink.size(); ++i)
+			ourShader.setMat4("finalBonesMatrices[" + std::to_string(i) + "]", transformsLink[i]);
 
 
 		// render the loaded model
-		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -3.0f)); // translate it down so it's at the center of the scene
-		model = glm::scale(model, glm::vec3(.00025f, .00025f, .00025f));	// it's a bit too big for our scene, so scale it down
-		ourShader.setMat4("model", model);
+		glm::mat4 modelLink = glm::mat4(1.0f);
+		modelLink = glm::translate(modelLink, glm::vec3(0.0f, -2.0f, -3.0f)); // translate it down so it's at the center of the scene
+		modelLink = glm::scale(modelLink, glm::vec3(.00025f, .00025f, .00025f));	// it's a bit too big for our scene, so scale it down
+		ourShader.setMat4("model", modelLink);
 		linkModel.Draw(ourShader);
-		linkModel.DrawFace(ourShader);
+		
 
-
-		transforms = gonzoAnimator.GetFinalBoneMatrices();
+		auto transforms = gonzoAnimator.GetFinalBoneMatrices();
 		for (int i = 0; i < transforms.size(); ++i)
 			ourShader.setMat4("finalBonesMatrices[" + std::to_string(i) + "]", transforms[i]);
 
 
-		model = glm::mat4(1.0f);
+		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 3.0f)); // translate it down so it's at the center of the scene
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // translate it down so it's at the center of the scene
 
@@ -174,6 +223,15 @@ int main()
 		ourShader.setMat4("model", model);
 		gonzoModel.Draw(ourShader);
 
+		pupilShader.use();
+
+		pupilShader.setMat4("projection", projection);
+		pupilShader.setMat4("model", modelLink);
+		pupilShader.setMat4("view", view);
+		for (int i = 0; i < transformsLink.size(); ++i)
+			pupilShader.setMat4("finalBonesMatrices[" + std::to_string(i) + "]", transformsLink[i]);
+
+		linkModel.DrawFace(pupilShader);
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------

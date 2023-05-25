@@ -34,7 +34,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 0.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -113,11 +113,11 @@ int main()
 
 	//pointlight positions
 	glm::vec3 pointLightPositions[] = {
-		glm::vec3(0.0f,  1.0f,  1.0f)
+		glm::vec3(0.0f,  1.0f,  0.0f)
 	};
 
 	glm::vec3 pointLightColors[] = {
-		glm::vec3(1.0f,  1.0f,  1.0f)
+		glm::vec3(1.0f,  0.0f,  0.0f)
 	};
 
 	glm::vec3 dirLightColor = glm::vec3(1.0f, 1.0f, 1.0f);
@@ -155,7 +155,8 @@ int main()
 		// don't forget to enable shader before setting uniforms
 		ourShader.use();
 		ourShader.setVec3("viewPos", camera.Position);
-		ourShader.setFloat("material.shininess", 64.0f);
+
+		ourShader.setFloat("material.shininess", 8.0f);
 		ourShader.setVec3("dirLight.direction", 1.0f, -1.0f, 1.0f);
 		ourShader.setVec3("dirLight.ambient", 0.4f, 0.4f, 0.4f);
 		ourShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
@@ -164,7 +165,7 @@ int main()
 		// point light 1
 		glm::vec3 pointLightPositionMoved[] = { pointLightPositions[0] };
 
-		ourShader.setVec3("pointLights[0].position", pointLightPositionMoved[0]);
+		ourShader.setVec3("pointLights[0].position", camera.Position);
 		ourShader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
 		ourShader.setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
 		ourShader.setVec3("pointLights[0].specular", 0.2f, 0.2f, 0.2f);
@@ -172,23 +173,6 @@ int main()
 		ourShader.setFloat("pointLights[0].linear", 0.09f);
 		ourShader.setFloat("pointLights[0].quadratic", 0.032f);
 		ourShader.setVec3("pointLights[0].color", pointLightColors[0]);
-
-		// spotLight
-		ourShader.setVec3("spotLight.position", camera.Position);
-		ourShader.setVec3("spotLight.direction", camera.Front);
-		ourShader.setVec3("spotLight.ambient", 0.0f, 0.0f, 0.0f);
-		ourShader.setVec3("spotLight.diffuse", 1.0f, 1.0f, 1.0f);
-		ourShader.setVec3("spotLight.specular", 0.2f, 0.2f, 0.2f);
-		ourShader.setFloat("spotLight.constant", 1.0f);
-		ourShader.setFloat("spotLight.linear", 0.09f);
-		ourShader.setFloat("spotLight.quadratic", 0.032f);
-		ourShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
-		ourShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));
-		ourShader.setVec3("spotLight.color", spotLightColor);
-
-		ourShader.use();
-		// don't forget to enable shader before setting uniforms
-		ourShader.use();
 
 		// view/projection transformations
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);

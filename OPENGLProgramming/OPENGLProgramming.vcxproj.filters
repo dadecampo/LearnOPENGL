@@ -79,9 +79,6 @@
     <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NormalMapping\shader.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
     <ClInclude Include="NormalMapping\animation.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
@@ -104,6 +101,9 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="NormalMapping\model_animation.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\shader.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

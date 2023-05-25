@@ -68,7 +68,7 @@ void main()
     // phase 2: Point lights
     for(int i = 0; i < NR_POINT_LIGHTS; i++){
         PointLight a = pointLights[i];
-        a.position = normalize(fs_in.TBN * a.position);
+        a.position = fs_in.TBN * a.position;
         result += CalcPointLight(a, normal, fs_in.TangentFragPos, viewDir);    
     }
     

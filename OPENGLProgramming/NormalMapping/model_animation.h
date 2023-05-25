@@ -222,6 +222,17 @@ private:
 			else
 				vertex.TexCoords = glm::vec2(0.0f, 0.0f);
 
+			if (mesh->mTangents)
+			{
+				glm::vec3 vec;
+				vec.x = mesh->mTangents[0].x;
+				vec.y = mesh->mTangents[0].y;
+				vec.z = mesh->mTangents[0].z;
+				vertex.Tangent = vec;
+			}
+			else
+				vertex.Tangent = glm::vec3(0.0f);
+
 			vertices.push_back(vertex);
 		}
 		for (unsigned int i = 0; i < mesh->mNumFaces; i++)

@@ -34,7 +34,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(2.5f, 7.0f, 3.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -106,7 +106,8 @@ int main()
 	Animation jumpingAnimation(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + timmy).c_str(), &timmyModel);
 	Animator timmyAnimator(&jumpingAnimation);
 
-
+	camera.Yaw = -130.0f;
+	camera.Pitch = -50.0f;
 	float vertices[] = {
 		// positions        
 		-0.5f, -0.5f, -0.5f,
@@ -161,8 +162,7 @@ int main()
 		glm::vec3(1.0f,  1.0f,  1.0f)
 	};
 
-	glm::vec3 dirLightColor = glm::vec3(1.0f, 1.0f, 1.0f);
-	glm::vec3 spotLightColor = glm::vec3(1.0f);
+	glm::vec3 dirLightColor = glm::vec3(1.0f, 0.2f, 0.4f);
 	// first, configure the cube's VAO (and VBO)
 	unsigned int VBO;
 	glGenBuffers(1, &VBO);
@@ -203,14 +203,15 @@ int main()
 		glClearDepth(GL_DEPTH_BUFFER_BIT);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		glm::vec3 dir(cos((float)glfwGetTime() * 10), sin((float)glfwGetTime() * 10), 0.0f);
 		// don't forget to enable shader before setting uniforms
 		ourShader.use();
 		ourShader.setVec3("viewPos", camera.Position);
-		ourShader.setFloat("material.shininess", 64.0f);
-		ourShader.setVec3("dirLight.direction", 0.0f, -1.0f, 0.0f);
-		ourShader.setVec3("dirLight.ambient", 0.5f, 0.5f, 0.5f);
-		ourShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
-		ourShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+		ourShader.setFloat("material.shininess", 8.0f);
+		ourShader.setVec3("dirLight.direction", 0.0f,0.0f,1.0f);
+		ourShader.setVec3("dirLight.ambient", 0.1f, 0.1f, 0.1f);
+		ourShader.setVec3("dirLight.diffuse", 0.2f, 0.2f, 0.2f);
+		ourShader.setVec3("dirLight.specular", 0.9f, 0.9f, 0.9f);
 		ourShader.setVec3("dirLight.color", dirLightColor);
 		// point light 1
 		glm::vec3 pointLightPositionMoved[] = { pointLightPositions[0]};
@@ -223,19 +224,6 @@ int main()
 		ourShader.setFloat("pointLights[0].linear", 0.09f);
 		ourShader.setFloat("pointLights[0].quadratic", 0.032f);
 		ourShader.setVec3("pointLights[0].color", pointLightColors[0]);
-
-		// spotLight
-		ourShader.setVec3("spotLight.position", camera.Position);
-		ourShader.setVec3("spotLight.direction", camera.Front);
-		ourShader.setVec3("spotLight.ambient", 0.2f, 0.2f, 0.2f);
-		ourShader.setVec3("spotLight.diffuse", 1.0f, 1.0f, 1.0f);
-		ourShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
-		ourShader.setFloat("spotLight.constant", 1.0f);
-		ourShader.setFloat("spotLight.linear", 0.09f);
-		ourShader.setFloat("spotLight.quadratic", 0.032f);
-		ourShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
-		ourShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));
-		ourShader.setVec3("spotLight.color", spotLightColor);
 
 		// view/projection transformations
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);

@@ -41,12 +41,8 @@ public:
 		loadModel(path);
 	}
 
-	Model(std::string const& path, std::string const& m_directory, bool gamma = false) : gammaCorrection(gamma)
-	{
-		loadModel(path, m_directory);
-	}
 
-	Model(std::string const& path, std::string const& m_directory, bool gamma = false, bool isLink = false) : gammaCorrection(gamma)
+	Model(std::string const& path, std::string const& m_directory, bool gamma = false) : gammaCorrection(gamma)
 	{
 		initializeTextureFacial();
 		initializeTextureOrder();
@@ -190,7 +186,7 @@ private:
 			Mesh currMesh = processMesh(mesh, scene);
 			bool isFacial = false;
 			for (int j = 0; j < currMesh.textures.size(); j++) {
-				if (isFacialTexture(currMesh.textures[i].path)) {
+				if (isFacialTexture(currMesh.textures[j].path)) {
 					meshes_face.push_back(currMesh);
 					isFacial = true;
 					break;

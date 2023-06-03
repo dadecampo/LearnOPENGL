@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="NormalMapping\NormalMapping.cpp">
+    <ClCompile Include="SkeletalModelTexture\Skeletal.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,12 +48,15 @@
     <None Include="Assets\Link\nervousLink2.fbx" />
     <None Include="Assets\timmy.fbx" />
     <None Include="Assets\timmy\timmy.dae" />
-    <None Include="NormalMapping\anim_model.fs" />
-    <None Include="NormalMapping\anim_model.vs" />
-    <None Include="NormalMapping\light_cube_fs.glsl" />
-    <None Include="NormalMapping\light_cube_vs.glsl" />
-    <None Include="NormalMapping\pupil_shader.fs" />
-    <None Include="NormalMapping\pupil_shader.vs" />
+    <None Include="SkeletalModelTexture\anim_model.fs" />
+    <None Include="SkeletalModelTexture\anim_model.vs" />
+    <None Include="SkeletalModelTexture\pupil_shader.fs" />
+    <None Include="SkeletalModelTexture\pupil_shader.vs" />
+    <None Include="SkeletalModelTexture\model_loading_fs.glsl" />
+    <None Include="SkeletalModelTexture\model_loading_vs.glsl" />
+    <None Include="Assets\Orca\OrcaHouse.fbx" />
+    <None Include="SkeletalModelTexture\light_cube_vs.glsl" />
+    <None Include="SkeletalModelTexture\light_cube_fs.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">
@@ -79,31 +82,31 @@
     <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NormalMapping\animation.h">
+    <ClInclude Include="SkeletalModelTexture\animation.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\animator.h">
+    <ClInclude Include="SkeletalModelTexture\animator.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\animdata.h">
+    <ClInclude Include="SkeletalModelTexture\animdata.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\assimp_glm_helpers.h">
+    <ClInclude Include="SkeletalModelTexture\assimp_glm_helpers.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\bone.h">
+    <ClInclude Include="SkeletalModelTexture\bone.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\camera.h">
+    <ClInclude Include="SkeletalModelTexture\camera.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\mesh.h">
+    <ClInclude Include="SkeletalModelTexture\mesh.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\model_animation.h">
+    <ClInclude Include="SkeletalModelTexture\model_animation.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\shader.h">
+    <ClInclude Include="SkeletalModelTexture\shader.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

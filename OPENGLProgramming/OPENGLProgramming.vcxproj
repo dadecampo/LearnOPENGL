@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="NormalMapping\NormalMapping.cpp" />
+    <ClCompile Include="SkeletalModelTexture\Skeletal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\astroBoy_walk_Maya.dae" />
@@ -160,18 +160,21 @@
     <None Include="Assets\Minotaur%40Walk.FBX" />
     <None Include="Assets\nervousLink.fbx" />
     <None Include="Assets\nervousLinkUnskinned.fbx" />
+    <None Include="Assets\Orca\OrcaHouse.fbx" />
     <None Include="Assets\timmy.fbx" />
     <None Include="Assets\timmy\timmy.dae" />
     <None Include="Assets\vampire\dancing_vampire.dae" />
-    <None Include="NormalMapping\anim_model.fs" />
-    <None Include="NormalMapping\anim_model.vs" />
-    <None Include="NormalMapping\light_cube_fs.glsl" />
-    <None Include="NormalMapping\light_cube_vs.glsl" />
-    <None Include="NormalMapping\pupil_shader.fs" />
-    <None Include="NormalMapping\pupil_shader.vs" />
     <None Include="Shaders\desktop.ini" />
     <None Include="Shaders\diffuse.frag" />
     <None Include="Shaders\diffuse.vert" />
+    <None Include="SkeletalModelTexture\anim_model.fs" />
+    <None Include="SkeletalModelTexture\anim_model.vs" />
+    <None Include="SkeletalModelTexture\light_cube_fs.glsl" />
+    <None Include="SkeletalModelTexture\light_cube_vs.glsl" />
+    <None Include="SkeletalModelTexture\model_loading_fs.glsl" />
+    <None Include="SkeletalModelTexture\model_loading_vs.glsl" />
+    <None Include="SkeletalModelTexture\pupil_shader.fs" />
+    <None Include="SkeletalModelTexture\pupil_shader.vs" />
     <None Include="x64\Debug\assimp-vc142-mt.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -186,15 +189,15 @@
     <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NormalMapping\animation.h" />
-    <ClInclude Include="NormalMapping\animator.h" />
-    <ClInclude Include="NormalMapping\animdata.h" />
-    <ClInclude Include="NormalMapping\assimp_glm_helpers.h" />
-    <ClInclude Include="NormalMapping\bone.h" />
-    <ClInclude Include="NormalMapping\camera.h" />
-    <ClInclude Include="NormalMapping\mesh.h" />
-    <ClInclude Include="NormalMapping\model_animation.h" />
-    <ClInclude Include="NormalMapping\shader.h" />
+    <ClInclude Include="SkeletalModelTexture\animation.h" />
+    <ClInclude Include="SkeletalModelTexture\animator.h" />
+    <ClInclude Include="SkeletalModelTexture\animdata.h" />
+    <ClInclude Include="SkeletalModelTexture\assimp_glm_helpers.h" />
+    <ClInclude Include="SkeletalModelTexture\bone.h" />
+    <ClInclude Include="SkeletalModelTexture\camera.h" />
+    <ClInclude Include="SkeletalModelTexture\mesh.h" />
+    <ClInclude Include="SkeletalModelTexture\model_animation.h" />
+    <ClInclude Include="SkeletalModelTexture\shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

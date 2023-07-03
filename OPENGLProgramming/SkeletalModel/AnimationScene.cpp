@@ -92,7 +92,7 @@ void AnimationScene::render(QuatCamera camera)
 	// Model matrix 
 	model = mat4(1.0f);
 	//model = glm::translate(glm::vec3(0.0, -20.0, 0.0));
-	model = glm::scale(glm::vec3(0.0025f));
+	model = glm::scale(glm::vec3(0.25f));
 
 	setMatrices(camera);
 

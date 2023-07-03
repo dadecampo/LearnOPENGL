@@ -6,7 +6,15 @@
 #include "shader_s.h"
 
 #include <iostream>
-
+#include <direct.h>
+#define GetCurrentDir _getcwd
+using namespace std;
+std::string get_current_dir() {
+    char buff[FILENAME_MAX]; //create string buffer to hold path
+    GetCurrentDir(buff, FILENAME_MAX);
+    string current_working_dir(buff);
+    return current_working_dir;
+}
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -20,6 +28,7 @@ using namespace std;
 
 int main()
 {
+    string current_dir = get_current_dir();
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();
@@ -109,7 +118,9 @@ int main()
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char* data = stbi_load("E:/Dev/LearnOPENGL/OPENGLProgramming/Resources/container.jpg", &width, &height, &nrChannels, 0);
+    string file = "/Resources/container.jpg";
+    string dest = (current_dir + file);
+    unsigned char* data = stbi_load(dest.c_str(), &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -131,7 +142,7 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
-    data = stbi_load("E:/Dev/LearnOPENGL/OPENGLProgramming/Resources/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("Resources/awesomeface.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA

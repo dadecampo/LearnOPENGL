@@ -184,6 +184,13 @@
     <Image Include="Assets\timmy\textures\Ch09_1001_Specular.png" />
     <Image Include="C:\Users\david\Desktop\awesomeface.png" />
     <Image Include="C:\Users\david\Desktop\container.jpg" />
+    <Image Include="Resources\awesomeface.png" />
+    <Image Include="Resources\container.jpg" />
+    <Image Include="Resources\container2.png" />
+    <Image Include="Resources\container2_specular.png" />
+    <Image Include="Resources\container2_specular_color.png" />
+    <Image Include="Resources\emission_map.png" />
+    <Image Include="Resources\matrix.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />

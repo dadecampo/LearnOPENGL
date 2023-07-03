@@ -110,15 +110,15 @@ int main()
 
 	// load models
 	// -----------
-	Model linkModel(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + link).c_str(), "", false);
-	Animation prayingAnimation(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + link).c_str(), &linkModel, 32);
+	Model linkModel(("Assets" + link).c_str(), "", false);
+	Animation prayingAnimation(("Assets" + link).c_str(), &linkModel, 32);
 	Animator linkAnimator(&prayingAnimation);
 
-	Model gonzoModel(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + gonzo).c_str(), "", false);
-	Animation tauntingAnimation(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + gonzo).c_str(), &gonzoModel);
+	Model gonzoModel(("Assets" + gonzo).c_str(), "", false);
+	Animation tauntingAnimation(("Assets" + gonzo).c_str(), &gonzoModel);
 	Animator gonzoAnimator(&tauntingAnimation);
 
-	Model orcaHouseModel(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + orcaHouse).c_str(), "", false);
+	Model orcaHouseModel(("Assets" + orcaHouse).c_str(), "", false);
 
 	float vertices[] = {
 		// positions        

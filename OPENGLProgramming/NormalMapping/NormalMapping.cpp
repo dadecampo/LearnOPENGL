@@ -102,8 +102,8 @@ int main()
 
 	// load models
 	// -----------
-	Model timmyModel(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + timmy).c_str(), "");
-	Animation jumpingAnimation(("D:/Dev/LearnOPENGL/OPENGLProgramming/Assets" + timmy).c_str(), &timmyModel);
+	Model timmyModel(("Assets" + timmy).c_str(), "");
+	Animation jumpingAnimation(("Assets" + timmy).c_str(), &timmyModel);
 	Animator timmyAnimator(&jumpingAnimation);
 
 	camera.Yaw = -130.0f;

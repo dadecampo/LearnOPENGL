@@ -48,15 +48,15 @@
     <None Include="Assets\Link\nervousLink2.fbx" />
     <None Include="Assets\timmy.fbx" />
     <None Include="Assets\timmy\timmy.dae" />
+    <None Include="Assets\Orca\OrcaHouse.fbx" />
     <None Include="SkeletalModelTexture\anim_model.fs" />
     <None Include="SkeletalModelTexture\anim_model.vs" />
-    <None Include="SkeletalModelTexture\pupil_shader.fs" />
-    <None Include="SkeletalModelTexture\pupil_shader.vs" />
+    <None Include="SkeletalModelTexture\light_cube_fs.glsl" />
+    <None Include="SkeletalModelTexture\light_cube_vs.glsl" />
     <None Include="SkeletalModelTexture\model_loading_fs.glsl" />
     <None Include="SkeletalModelTexture\model_loading_vs.glsl" />
-    <None Include="Assets\Orca\OrcaHouse.fbx" />
-    <None Include="SkeletalModelTexture\light_cube_vs.glsl" />
-    <None Include="SkeletalModelTexture\light_cube_fs.glsl" />
+    <None Include="SkeletalModelTexture\pupil_shader.fs" />
+    <None Include="SkeletalModelTexture\pupil_shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">
@@ -75,6 +75,27 @@
       <Filter>File di risorse</Filter>
     </Image>
     <Image Include="Assets\timmy\textures\Ch09_1001_Normal.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Resources\matrix.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Resources\awesomeface.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Resources\container.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Resources\container2.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Resources\container2_specular.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Resources\container2_specular_color.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="Resources\emission_map.png">
       <Filter>File di risorse</Filter>
     </Image>
   </ItemGroup>

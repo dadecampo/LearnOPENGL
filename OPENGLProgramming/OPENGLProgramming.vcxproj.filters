@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="Transformation\Transformation.cpp">
+    <ClCompile Include="NormalMapping\NormalMapping.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -52,8 +52,6 @@
     <None Include="x64\Debug\assimp-vc143-mt.dll" />
     <None Include="..\..\AssimpBuild\bin\Release\assimp-vc143-mt.dll" />
     <None Include="Resources\backpack\backpack.mtl" />
-    <None Include="Transformation\Shader_fs.glsl" />
-    <None Include="Transformation\Shader_vs.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">
@@ -118,7 +116,31 @@
     <Text Include="Resources\backpack\source_attribution.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Transformation\shader_s.h">
+    <ClInclude Include="NormalMapping\animation.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\animator.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\animdata.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\assimp_glm_helpers.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\bone.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\mesh.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\model_animation.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMapping\shader.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

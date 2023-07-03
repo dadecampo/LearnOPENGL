@@ -73,8 +73,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath); </IncludePath>
-    <LibraryPath>E:\Dev\AssimpBuild\lib\Release\;C:\Program Files (x86)\glfw-3.3.8\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <ExternalIncludePath>E:\Dev\AssimpBuild\include\;E:\Dev\Assimp\include\;C:\Program Files (x86)\glfw-3.3.8\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
+    <LibraryPath>D:\Dev\AssimpBuild\lib\Release\;C:\Program Files (x86)\glfw-3.3.8\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <ExternalIncludePath>D:\Dev\AssimpBuild\include\;D:\Dev\Assimp\include\;C:\Program Files (x86)\glfw-3.3.8\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -117,7 +117,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc143-mt.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc142-mt.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="Transformation\Transformation.cpp" />
+    <ClCompile Include="NormalMapping\NormalMapping.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\AssimpBuild\bin\Release\assimp-vc143-mt.dll" />
@@ -169,8 +169,6 @@
     <None Include="Shaders\desktop.ini" />
     <None Include="Shaders\diffuse.frag" />
     <None Include="Shaders\diffuse.vert" />
-    <None Include="Transformation\Shader_fs.glsl" />
-    <None Include="Transformation\Shader_vs.glsl" />
     <None Include="x64\Debug\assimp-vc142-mt.dll" />
     <None Include="x64\Debug\assimp-vc143-mt.dll" />
   </ItemGroup>
@@ -199,7 +197,15 @@
     <Text Include="Resources\backpack\source_attribution.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Transformation\shader_s.h" />
+    <ClInclude Include="NormalMapping\animation.h" />
+    <ClInclude Include="NormalMapping\animator.h" />
+    <ClInclude Include="NormalMapping\animdata.h" />
+    <ClInclude Include="NormalMapping\assimp_glm_helpers.h" />
+    <ClInclude Include="NormalMapping\bone.h" />
+    <ClInclude Include="NormalMapping\camera.h" />
+    <ClInclude Include="NormalMapping\mesh.h" />
+    <ClInclude Include="NormalMapping\model_animation.h" />
+    <ClInclude Include="NormalMapping\shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

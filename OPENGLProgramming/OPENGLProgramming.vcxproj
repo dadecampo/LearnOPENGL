@@ -73,8 +73,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath); </IncludePath>
-    <LibraryPath>D:\Dev\AssimpBuild\lib\Release\;C:\Program Files (x86)\glfw-3.3.8\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <ExternalIncludePath>E:\Dev\AssimpBuild\include\;D:\Dev\AssimpBuild\include\;E:\Dev\Assimp\include\;D:\Dev\Assimp\include\;C:\Program Files (x86)\glfw-3.3.8\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
+    <LibraryPath>E:\Dev\AssimpBuild\lib\Release\;C:\Program Files (x86)\glfw-3.3.8\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <ExternalIncludePath>E:\Dev\AssimpBuild\include\;E:\Dev\Assimp\include\;C:\Program Files (x86)\glfw-3.3.8\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -117,7 +117,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc142-mt.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc143-mt.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -139,9 +139,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="SkeletalModelTexture\Skeletal.cpp" />
+    <ClCompile Include="Transformation\Transformation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\AssimpBuild\bin\Release\assimp-vc143-mt.dll" />
     <None Include="Assets\astroBoy_walk_Maya.dae" />
     <None Include="Assets\dancingLink2.fbx" />
     <None Include="Assets\dancingLink3.fbx" />
@@ -164,18 +165,14 @@
     <None Include="Assets\timmy.fbx" />
     <None Include="Assets\timmy\timmy.dae" />
     <None Include="Assets\vampire\dancing_vampire.dae" />
+    <None Include="Resources\backpack\backpack.mtl" />
     <None Include="Shaders\desktop.ini" />
     <None Include="Shaders\diffuse.frag" />
     <None Include="Shaders\diffuse.vert" />
-    <None Include="SkeletalModelTexture\anim_model.fs" />
-    <None Include="SkeletalModelTexture\anim_model.vs" />
-    <None Include="SkeletalModelTexture\light_cube_fs.glsl" />
-    <None Include="SkeletalModelTexture\light_cube_vs.glsl" />
-    <None Include="SkeletalModelTexture\model_loading_fs.glsl" />
-    <None Include="SkeletalModelTexture\model_loading_vs.glsl" />
-    <None Include="SkeletalModelTexture\pupil_shader.fs" />
-    <None Include="SkeletalModelTexture\pupil_shader.vs" />
+    <None Include="Transformation\Shader_fs.glsl" />
+    <None Include="Transformation\Shader_vs.glsl" />
     <None Include="x64\Debug\assimp-vc142-mt.dll" />
+    <None Include="x64\Debug\assimp-vc143-mt.dll" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\timmy\textures\Ch09_1001_Diffuse.png" />
@@ -185,6 +182,12 @@
     <Image Include="C:\Users\david\Desktop\awesomeface.png" />
     <Image Include="C:\Users\david\Desktop\container.jpg" />
     <Image Include="Resources\awesomeface.png" />
+    <Image Include="Resources\backpack\ao.jpg" />
+    <Image Include="Resources\backpack\diffuse.jpg" />
+    <Image Include="Resources\backpack\normal.png" />
+    <Image Include="Resources\backpack\roughness.jpg" />
+    <Image Include="Resources\backpack\specular.jpg" />
+    <Image Include="Resources\backpack\texture_diffuse1.jpg" />
     <Image Include="Resources\container.jpg" />
     <Image Include="Resources\container2.png" />
     <Image Include="Resources\container2_specular.png" />
@@ -193,18 +196,10 @@
     <Image Include="Resources\matrix.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\AssimpBuild\bin\Release\assimp-vc142-mt.lib" />
+    <Text Include="Resources\backpack\source_attribution.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SkeletalModelTexture\animation.h" />
-    <ClInclude Include="SkeletalModelTexture\animator.h" />
-    <ClInclude Include="SkeletalModelTexture\animdata.h" />
-    <ClInclude Include="SkeletalModelTexture\assimp_glm_helpers.h" />
-    <ClInclude Include="SkeletalModelTexture\bone.h" />
-    <ClInclude Include="SkeletalModelTexture\camera.h" />
-    <ClInclude Include="SkeletalModelTexture\mesh.h" />
-    <ClInclude Include="SkeletalModelTexture\model_animation.h" />
-    <ClInclude Include="SkeletalModelTexture\shader.h" />
+    <ClInclude Include="Transformation\shader_s.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

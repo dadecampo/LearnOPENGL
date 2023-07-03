@@ -41,12 +41,8 @@ public:
 		loadModel(path);
 	}
 
-	Model(std::string const& path, std::string const& m_directory, bool gamma = false) : gammaCorrection(gamma)
-	{
-		loadModel(path, m_directory);
-	}
 
-	Model(std::string const& path, std::string const& m_directory, bool gamma = false, bool isLink = false) : gammaCorrection(gamma)
+	Model(std::string const& path, std::string const& m_directory, bool gamma = false) : gammaCorrection(gamma)
 	{
 		initializeTextureFacial();
 		initializeTextureOrder();
@@ -78,6 +74,20 @@ public:
 
 	void DrawFace(Shader& shader)
 	{
+		if (rendering_order.size() != 0) {
+			for (int i = 0; i < meshes_face.size(); i++) {
+				auto meshCurr = meshes_face[i];
+				int orderCurr = getTextureOrder(meshes_face[i].textures[0].path);
+				for (int j = i + 1; j < meshes_face.size(); j++) {
+					int orderPoss = getTextureOrder(meshes_face[j].textures[0].path);
+					if (orderPoss < orderCurr) {
+						meshes_face[i] = meshes_face[j];
+						meshes_face[j] = meshCurr;
+						orderCurr = orderPoss;
+					}
+				}
+			}
+		}
 		for (int i = 0; i < meshes_face.size(); i++)
 			meshes_face[i].Draw(shader);
 	}
@@ -129,6 +139,7 @@ private:
 	}
 
 	void initializeTextureFacial() {
+		textures_face.push_back("eyebrow1");
 		textures_face.push_back("eye1");
 		textures_face.push_back("pupil");
 	}
@@ -137,8 +148,11 @@ private:
 		rendering_order.push_back("mouth1");
 		rendering_order.push_back("body");
 		rendering_order.push_back("sheath");
-		//rendering_order.push_back("eye1");
+		rendering_order.push_back("eye1");
+		rendering_order.push_back("pupil");
 		rendering_order.push_back("eyebrow1");
+
+		//rendering_order.push_back("eye1");
 		//rendering_order.push_back("pupil");
 	}
 
@@ -172,13 +186,13 @@ private:
 			Mesh currMesh = processMesh(mesh, scene);
 			bool isFacial = false;
 			for (int j = 0; j < currMesh.textures.size(); j++) {
-				if (isFacialTexture(currMesh.textures[i].path)) {
+				if (isFacialTexture(currMesh.textures[j].path)) {
 					meshes_face.push_back(currMesh);
 					isFacial = true;
 					break;
 				}
 			}
-			if(!isFacial)
+			if (!isFacial)
 				meshes.push_back(currMesh);
 		}
 		// after we've processed all of the meshes (if any) we then recursively process each of the children nodes
@@ -221,6 +235,7 @@ private:
 			}
 			else
 				vertex.TexCoords = glm::vec2(0.0f, 0.0f);
+
 
 			if (mesh->mTangents)
 			{
@@ -370,10 +385,24 @@ private:
 			}
 			if (!skip)
 			{   // if texture hasn't been loaded already, load it
+				char* a = (char*)(str.C_Str());
+				char* next_token1 = NULL;
+				char* previous_token = NULL;
+				a = strtok_s(a, "\\", &next_token1);
+				while ((a != NULL))
+				{
+					previous_token = a;
+					// Get next token:
+					if (a != NULL)
+					{
+						printf(" %s\n", next_token1);
+						a = strtok_s(NULL, "\\", &next_token1);
+					}
+				}
 				Texture texture;
-				texture.id = TextureFromFile(str.C_Str(), this->directory);
+				texture.id = TextureFromFile(previous_token, this->directory);
 				texture.type = typeName;
-				texture.path = str.C_Str();
+				texture.path = previous_token;
 				textures.push_back(texture);
 				textures_loaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecessary load duplicate textures.
 			}

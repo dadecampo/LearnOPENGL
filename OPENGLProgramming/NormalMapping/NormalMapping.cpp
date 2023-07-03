@@ -45,6 +45,7 @@ float lastFrame = 0.0f;
 
 int main()
 {
+	std::string working_dir = workingdir();
 	// glfw: initialize and configure
 	// ------------------------------
 	glfwInit();
@@ -102,7 +103,7 @@ int main()
 
 	// load models
 	// -----------
-	Model timmyModel(("Assets" + timmy).c_str(), "");
+	Model timmyModel(("Assets" + timmy).c_str(), working_dir + std::string("Assets\\dummy\\textures\\"));
 	Animation jumpingAnimation(("Assets" + timmy).c_str(), &timmyModel);
 	Animator timmyAnimator(&jumpingAnimation);
 

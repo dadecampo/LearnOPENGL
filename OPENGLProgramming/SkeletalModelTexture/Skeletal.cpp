@@ -97,6 +97,7 @@ int main()
 
 	// build and compile shaders
 	// -------------------------
+	std::string working_dir = workingdir();
 	Shader ourShader("SkeletalModelTexture\\anim_model.vs", "SkeletalModelTexture\\anim_model.fs");
 	Shader houseShader("SkeletalModelTexture\\model_loading_vs.glsl", "SkeletalModelTexture\\model_loading_fs.glsl");
 
@@ -110,15 +111,15 @@ int main()
 
 	// load models
 	// -----------
-	Model linkModel(("Assets" + link).c_str(), "", false);
+	Model linkModel(("Assets" + link).c_str(), working_dir+std::string("Assets\\LinkPraying\\"), false);
 	Animation prayingAnimation(("Assets" + link).c_str(), &linkModel, 32);
 	Animator linkAnimator(&prayingAnimation);
 
-	Model gonzoModel(("Assets" + gonzo).c_str(), "", false);
+	Model gonzoModel(("Assets" + gonzo).c_str(), working_dir + std::string("Assets\\Gonzo\\"), false);
 	Animation tauntingAnimation(("Assets" + gonzo).c_str(), &gonzoModel);
 	Animator gonzoAnimator(&tauntingAnimation);
 
-	Model orcaHouseModel(("Assets" + orcaHouse).c_str(), "", false);
+	Model orcaHouseModel(("Assets" + orcaHouse).c_str(), "Assets\\Orca\\", false);
 
 	float vertices[] = {
 		// positions        

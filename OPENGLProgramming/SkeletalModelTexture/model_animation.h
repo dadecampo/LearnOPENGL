@@ -385,10 +385,24 @@ private:
 			}
 			if (!skip)
 			{   // if texture hasn't been loaded already, load it
+				char* a = (char*)(str.C_Str());
+				char* next_token1 = NULL;
+				char* previous_token = NULL;
+				a = strtok_s(a, "\\", &next_token1);
+				while ((a != NULL))
+				{
+					previous_token = a;
+					// Get next token:
+					if (a != NULL)
+					{
+						printf(" %s\n", next_token1);
+						a = strtok_s(NULL, "\\", &next_token1);
+					}
+				}
 				Texture texture;
-				texture.id = TextureFromFile(str.C_Str(), this->directory);
+				texture.id = TextureFromFile(previous_token, this->directory);
 				texture.type = typeName;
-				texture.path = str.C_Str();
+				texture.path = previous_token;
 				textures.push_back(texture);
 				textures_loaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecessary load duplicate textures.
 			}

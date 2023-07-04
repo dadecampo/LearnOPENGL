@@ -98,11 +98,11 @@ int main()
 	// build and compile shaders
 	// -------------------------
 	std::string working_dir = workingdir();
-	Shader ourShader("SkeletalModelTexture\\anim_model.vs", "SkeletalModelTexture\\anim_model.fs");
-	Shader houseShader("SkeletalModelTexture\\model_loading_vs.glsl", "SkeletalModelTexture\\model_loading_fs.glsl");
+	Shader ourShader("FirstExercitation\\anim_model.vs", "FirstExercitation\\anim_model.fs");
+	Shader houseShader("FirstExercitation\\model_loading_vs.glsl", "FirstExercitation\\model_loading_fs.glsl");
 
-	Shader pupilShader("SkeletalModelTexture\\pupil_shader.vs", "SkeletalModelTexture\\pupil_shader.fs");
-	Shader lightCubeShader("SkeletalModelTexture\\light_cube_vs.glsl", "SkeletalModelTexture\\light_cube_fs.glsl");
+	Shader pupilShader("FirstExercitation\\pupil_shader.vs", "FirstExercitation\\pupil_shader.fs");
+	Shader lightCubeShader("FirstExercitation\\light_cube_vs.glsl", "FirstExercitation\\light_cube_fs.glsl");
 
 	std::string link = "/LinkPraying/link.fbx";
 	std::string gonzo = "/Gonzo/Gonzo.fbx";
@@ -174,7 +174,8 @@ int main()
 
 	glm::vec3 pointLightColors[] = {
 		glm::vec3(1.0f,  1.0f,  1.0f),
-		glm::vec3(1.0f,  1.0f,  0.0f)
+		glm::vec3(1.0f,  1.0f,  0.0f),
+		glm::vec3(1.0f,	 0.0f,  0.0f)
 	};
 
 	glm::vec3 dirLightColor = glm::vec3(1.0f, 1.0f, 1.0f);
@@ -213,7 +214,6 @@ int main()
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-
 		// input
 		// -----
 		processInput(window);
@@ -268,6 +268,15 @@ int main()
 		ourShader.setFloat("pointLights[1].linear", 0.2f);
 		ourShader.setFloat("pointLights[1].quadratic", 0.032f);
 		ourShader.setVec3("pointLights[1].color", pointLightColors[1]);
+
+		ourShader.setVec3("pointLights[2].position", camera.Position);
+		ourShader.setVec3("pointLights[2].ambient", 0.1f, 0.1f, 0.1f);
+		ourShader.setVec3("pointLights[2].diffuse", 0.1f, 0.1f, 0.1f);
+		ourShader.setVec3("pointLights[2].specular", 0.1f, 0.1f, 0.1f);
+		ourShader.setFloat("pointLights[2].constant", 0.5f);
+		ourShader.setFloat("pointLights[2].linear", 0.2f);
+		ourShader.setFloat("pointLights[2].quadratic", 0.1f);
+		ourShader.setVec3("pointLights[2].color", pointLightColors[2]);
 
 		// view/projection transformations
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
@@ -331,8 +340,14 @@ int main()
 		houseShader.setFloat("pointLights[1].quadratic", 0.032f);
 		houseShader.setVec3("pointLights[1].color", pointLightColors[1]);
 
-		projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-		view = glm::lookAt(camera.Position, cameraLookAt, camera.Up);
+		houseShader.setVec3("pointLights[2].position", camera.Position);
+		houseShader.setVec3("pointLights[2].ambient", 0.1f, 0.1f, 0.1f);
+		houseShader.setVec3("pointLights[2].diffuse", 0.1f, 0.1f, 0.1f);
+		houseShader.setVec3("pointLights[2].specular", 0.1f, 0.1f, 0.1f);
+		houseShader.setFloat("pointLights[2].constant", 0.5f);
+		houseShader.setFloat("pointLights[2].linear", 0.2f);
+		houseShader.setFloat("pointLights[2].quadratic", 0.1f);
+		houseShader.setVec3("pointLights[2].color", pointLightColors[2]);
 
 		houseShader.setMat4("projection", projection);
 		houseShader.setMat4("view", view);

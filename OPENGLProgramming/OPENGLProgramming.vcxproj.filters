@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="NormalMapping\NormalMapping.cpp">
+    <ClCompile Include="FirstExercitation\FirstExercitation.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,9 +29,6 @@
     <None Include="Assets\Minotaur%40Attack.FBX" />
     <None Include="Assets\Minotaur%40Death1.FBX" />
     <None Include="Assets\Minotaur%40Jump.FBX" />
-    <None Include="Shaders\diffuse.vert" />
-    <None Include="Shaders\desktop.ini" />
-    <None Include="Shaders\diffuse.frag" />
     <None Include="Assets\Kika.fbx" />
     <None Include="Assets\Link\dancingLink.fbx" />
     <None Include="Assets\Link\dancingLink2.fbx" />
@@ -50,7 +47,6 @@
     <None Include="Assets\timmy\timmy.dae" />
     <None Include="Assets\Orca\OrcaHouse.fbx" />
     <None Include="x64\Debug\assimp-vc143-mt.dll" />
-    <None Include="..\..\AssimpBuild\bin\Release\assimp-vc143-mt.dll" />
     <None Include="Resources\backpack\backpack.mtl" />
   </ItemGroup>
   <ItemGroup>
@@ -116,31 +112,31 @@
     <Text Include="Resources\backpack\source_attribution.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NormalMapping\animation.h">
+    <ClInclude Include="FirstExercitation\animation.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\animator.h">
+    <ClInclude Include="FirstExercitation\animator.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\animdata.h">
+    <ClInclude Include="FirstExercitation\animdata.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\assimp_glm_helpers.h">
+    <ClInclude Include="FirstExercitation\assimp_glm_helpers.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\bone.h">
+    <ClInclude Include="FirstExercitation\bone.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\camera.h">
+    <ClInclude Include="FirstExercitation\camera.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\mesh.h">
+    <ClInclude Include="FirstExercitation\mesh.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\model_animation.h">
+    <ClInclude Include="FirstExercitation\model_animation.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="NormalMapping\shader.h">
+    <ClInclude Include="FirstExercitation\shader.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

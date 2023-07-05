@@ -9,8 +9,6 @@
 #include <sstream>
 #include <iostream>
 
-using namespace glm;
-
 class Shader
 {
 public:

@@ -200,8 +200,6 @@ int main()
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	float rotationAngle = 0.0f;
-
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -232,8 +230,6 @@ int main()
 		glm::mat4 view = glm::lookAt(camera.Position, cameraLookAt, camera.Up);
 		camera.Yaw = 0;
 		camera.Pitch = 0;
-
-		rotationAngle += 1.0f;
 
 		// point light 1
 		glm::vec3 pointLightPositionMoved[] = { pointLightPositions[0], pointLightPositions[1] };

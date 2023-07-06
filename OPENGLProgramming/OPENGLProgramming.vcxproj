@@ -165,12 +165,6 @@
     <None Include="Assets\timmy\timmy.dae" />
     <None Include="Assets\vampire\dancing_vampire.dae" />
     <None Include="Resources\backpack\backpack.mtl" />
-    <None Include="SecondExercitation\ssao.fs" />
-    <None Include="SecondExercitation\ssao.vs" />
-    <None Include="SecondExercitation\ssao_blur.fs" />
-    <None Include="SecondExercitation\ssao_geometry.fs" />
-    <None Include="SecondExercitation\ssao_geometry.vs" />
-    <None Include="SecondExercitation\ssao_lighting.fs" />
     <None Include="x64\Debug\assimp-vc142-mt.dll" />
     <None Include="x64\Debug\assimp-vc143-mt.dll" />
   </ItemGroup>

@@ -48,12 +48,6 @@
     <None Include="Assets\Orca\OrcaHouse.fbx" />
     <None Include="x64\Debug\assimp-vc143-mt.dll" />
     <None Include="Resources\backpack\backpack.mtl" />
-    <None Include="SecondExercitation\ssao_geometry.vs" />
-    <None Include="SecondExercitation\ssao_geometry.fs" />
-    <None Include="SecondExercitation\ssao.vs" />
-    <None Include="SecondExercitation\ssao_lighting.fs" />
-    <None Include="SecondExercitation\ssao.fs" />
-    <None Include="SecondExercitation\ssao_blur.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\david\Desktop\container.jpg">
@@ -118,16 +112,16 @@
     <Text Include="Resources\backpack\source_attribution.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SecondExercitation\shader_s.h">
+    <ClInclude Include="SecondExercitation\camera.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondExercitation\mesh.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="SecondExercitation\model.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SecondExercitation\camera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="SecondExercitation\mesh.h">
+    <ClInclude Include="SecondExercitation\shader_s.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

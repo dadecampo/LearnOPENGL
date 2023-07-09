@@ -16,6 +16,13 @@
 #include <iostream>
 #include <random>
 
+std::string workingdir()
+{
+    char buf[256];
+    GetCurrentDirectoryA(256, buf);
+    return std::string(buf) + '\\';
+}
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
@@ -43,12 +50,6 @@ float ourLerp(float a, float b, float f)
     return a + f * (b - a);
 }
 
-std::string workingdir()
-{
-    char buf[256];
-    GetCurrentDirectoryA(256, buf);
-    return std::string(buf) + '\\';
-}
 int main()
 {
     // glfw: initialize and configure
@@ -180,12 +181,12 @@ int main()
     std::uniform_real_distribution<GLfloat> randomFloats(0.0, 1.0); // generates random floats between 0.0 and 1.0
     std::default_random_engine generator;
     std::vector<glm::vec3> ssaoKernel;
-    for (unsigned int i = 0; i < 64; ++i)
+    for (unsigned int i = 0; i < 256; ++i)
     {
         glm::vec3 sample(randomFloats(generator) * 2.0 - 1.0, randomFloats(generator) * 2.0 - 1.0, randomFloats(generator));
         sample = glm::normalize(sample);
         sample *= randomFloats(generator);
-        float scale = float(i) / 64.0f;
+        float scale = float(i) / 256.0f;
 
         // scale samples s.t. they're more aligned to center of kernel
         scale = ourLerp(0.1f, 1.0f, scale * scale);
@@ -247,8 +248,7 @@ int main()
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // 1. geometry pass: render scene's geometry/color data into gbuffer
-        // -----------------------------------------------------------------
+        // 1. GEOMETRY
         glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 50.0f);
@@ -275,13 +275,12 @@ int main()
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 
-        // 2. generate SSAO texture
-        // ------------------------
+        // 2. SSAO
         glBindFramebuffer(GL_FRAMEBUFFER, ssaoFBO);
         glClear(GL_COLOR_BUFFER_BIT);
         shaderSSAO.use();
         // Send kernel + rotation 
-        for (unsigned int i = 0; i < 64; ++i)
+        for (unsigned int i = 0; i < 256; ++i)
             shaderSSAO.setVec3("samples[" + std::to_string(i) + "]", ssaoKernel[i]);
         shaderSSAO.setMat4("projection", projection);
         glActiveTexture(GL_TEXTURE0);
@@ -294,8 +293,7 @@ int main()
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 
-        // 3. blur SSAO texture to remove noise
-        // ------------------------------------
+        // 3. BLURRING PHASE
         glBindFramebuffer(GL_FRAMEBUFFER, ssaoBlurFBO);
         glClear(GL_COLOR_BUFFER_BIT);
         shaderSSAOBlur.use();

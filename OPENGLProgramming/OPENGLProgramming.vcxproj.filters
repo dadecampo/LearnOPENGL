@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\glad\src\glad.c">
       <Filter>File di risorse</Filter>
     </ClCompile>
-    <ClCompile Include="SecondExercitation\SSAO.cpp">
+    <ClCompile Include="ModelLoading\ModelLoading.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -112,16 +112,16 @@
     <Text Include="Resources\backpack\source_attribution.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SecondExercitation\camera.h">
+    <ClInclude Include="ModelLoading\camera.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SecondExercitation\mesh.h">
+    <ClInclude Include="ModelLoading\mesh.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SecondExercitation\model.h">
+    <ClInclude Include="ModelLoading\model.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="SecondExercitation\shader_s.h">
+    <ClInclude Include="ModelLoading\shader_s.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

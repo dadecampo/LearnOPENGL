@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
-    <ClCompile Include="SecondExercitation\SSAO.cpp" />
+    <ClCompile Include="ModelLoading\ModelLoading.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\astroBoy_walk_Maya.dae" />
@@ -193,10 +193,10 @@
     <Text Include="Resources\backpack\source_attribution.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SecondExercitation\camera.h" />
-    <ClInclude Include="SecondExercitation\mesh.h" />
-    <ClInclude Include="SecondExercitation\model.h" />
-    <ClInclude Include="SecondExercitation\shader_s.h" />
+    <ClInclude Include="ModelLoading\camera.h" />
+    <ClInclude Include="ModelLoading\mesh.h" />
+    <ClInclude Include="ModelLoading\model.h" />
+    <ClInclude Include="ModelLoading\shader_s.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

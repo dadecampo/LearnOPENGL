@@ -210,18 +210,18 @@ int main()
 		*/
 		// directional light
 		ourShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-		ourShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("dirLight.ambient", 0.3f, 0.3f, 0.3f);
 		ourShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
 		ourShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
 		ourShader.setVec3("dirLight.color", dirLightColor);
 		// point light 1
 		glm::vec3 pointLightPositionMoved[] = { pointLightPositions[0], pointLightPositions[1], pointLightPositions[2], pointLightColors[3] };
 		for (int i = 0; i <= pointLightPositions->length(); i++) {
-			pointLightPositionMoved[i] = glm::vec3(pointLightPositions[i].x * cos((float)glfwGetTime() * 10)*10, pointLightPositions[i].y * sin((float)glfwGetTime() * 10) * 10, pointLightPositions[i].z * 10);
+			pointLightPositionMoved[i] = glm::vec3(pointLightPositions[i].x * cos((float)glfwGetTime())*1, pointLightPositions[i].y * sin((float)glfwGetTime()) * 1, pointLightPositions[i].z);
 		}
 
 		ourShader.setVec3("pointLights[0].position", pointLightPositionMoved[0]);
-		ourShader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[0].ambient", 0.3f, 0.3f, 0.3f);
 		ourShader.setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
 		ourShader.setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
 		ourShader.setFloat("pointLights[0].constant", 1.0f);
@@ -231,7 +231,7 @@ int main()
 
 		// point light 2
 		ourShader.setVec3("pointLights[1].position", pointLightPositionMoved[1]);
-		ourShader.setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[1].ambient", 0.3f, 0.3f, 0.3f);
 		ourShader.setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
 		ourShader.setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
 		ourShader.setFloat("pointLights[1].constant", 1.0f);
@@ -240,7 +240,7 @@ int main()
 		ourShader.setVec3("pointLights[1].color", pointLightColors[1]);
 		// point light 3
 		ourShader.setVec3("pointLights[2].position", pointLightPositionMoved[2]);
-		ourShader.setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[2].ambient", 0.3f, 0.3f, 0.3f);
 		ourShader.setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
 		ourShader.setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
 		ourShader.setFloat("pointLights[2].constant", 1.0f);
@@ -249,7 +249,7 @@ int main()
 		ourShader.setVec3("pointLights[2].color", pointLightColors[2]);
 		// point light 4
 		ourShader.setVec3("pointLights[3].position", pointLightPositionMoved[3]);
-		ourShader.setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
+		ourShader.setVec3("pointLights[3].ambient", 0.3f, 0.3f, 0.3f);
 		ourShader.setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
 		ourShader.setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
 		ourShader.setFloat("pointLights[3].constant", 1.0f);
